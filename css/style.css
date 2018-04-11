@@ -1,14 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	background-image: url("../images/pexels-photo-212324.jpeg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	background-position: center, center;
 	background-size: cover;
 	font-family: "Dosis", cursive;
-	font-size: 1em;
+	font-size: 14pt;
+}
+
+header {
+	height: 10vh;
 }
 
 main {
-	height: 90vh;
+	height: 80vh;
 	max-width: 100%; 
 	display: flex;
 	justify-content: center;
@@ -42,7 +52,6 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #555;
 }
 
 footer p {
@@ -51,30 +60,14 @@ footer p {
 
 @media only screen and (min-width: 480px){
 	
-	input.character-name {
-		font-size: 2.5em;
-	}
-
-	footer {
-		background-color: #666;
-	}
 }
 
 @media only screen and (min-width: 768px) {
 
-	input.character-name {
-		font-size: 3em;
-	}
-
-	footer {
-		background-color: #777;
-	}
 }
 
 @media only screen and (min-width: 1024px) {
-	footer{
-		background-color: #888;
-	}
+
 }
 
 
