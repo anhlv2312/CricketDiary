@@ -16,8 +16,6 @@ h1, h2, h3, h4 {
 	font-family: "Milonga", serif;
 }
 
-
-
 /* Body */
 
 body {
@@ -29,6 +27,7 @@ body {
 	font-family: "Vollkorn", serif;
 	font-size: 14pt;
 	color: black;
+	text-shadow: 0 0 0.1em white;
 	display: flex;
 	flex-direction: column;
 }
@@ -56,9 +55,10 @@ header nav li {
 }
 
 header nav a {
+	font-weight: bold;
 	display: block;
 	text-decoration: none;
-	font-family: "Poppins", sans-serif;
+	font-family: "Milonga", serif;
 	padding: 0.5em 0;
 	border-radius: 0.2em;
 	border: 1px solid darkgreen;
@@ -69,15 +69,16 @@ header nav a {
 header nav a:hover {
 	border: 1px solid darkgreen;
 	color: white;
-	background: rgba(0, 89, 0, 0.5);
+	background: rgba(0, 96, 0, 0.5);
+	text-shadow: 0 0 0.1em black;
 
 }
 
 header nav li a.active {
 	border: 1px solid darkgreen;
 	color: white;
-	background: darkgreen;
-
+	background: rgba(0, 96, 0, 0.9);
+	text-shadow: 0 0 0.1em black;
 }
 
 /* Footer */
@@ -85,19 +86,17 @@ header nav li a.active {
 footer {
 	margin: 1em 0;
 	font-size: 0.9em;
-	font-family: "Poppins", sans-serif;
-	text-shadow: 0 0 0.1em white;
 	justify-content: center;
 }
 
 
 
 /* Index Page */
-#index {
+#index, #map {
 	flex-direction: column;
 }
 
-#index .summary, #index .author {
+.container {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -109,14 +108,15 @@ footer {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	height: 70vh;
 }
 
 #index .summary {
+	height: 70vh;
 	background-image: url("../images/front_cover_en.jpg");
 }
 
 #index .author {
+	height: 70vh;
 	background-image: url("../images/author.jpg");
 }
 
@@ -131,7 +131,6 @@ footer {
 	padding: 0.5em 0.7em;
 	border-radius: 1em;
 	text-align: justify;
-	text-shadow: 0 0 0.1em white;
 	line-height: 1.3em;
 	background-color: rgba(255, 255, 255, 0.4);
 }
@@ -162,23 +161,31 @@ footer {
 	padding: 1em;
 	border-radius: 1em;
 	background-color: rgba(255, 255, 255, 0.5);
-	text-shadow: 0 0 0.1em white;
 	background-size: cover;
 	background-repeat: no-repeat;
 	overflow: hidden;
 }
 
-#content li:hover {
-	cursor: pointer;
-	border: 1px solid white;
+#content li h3 {
+	padding-top: 15vh;
+	padding-bottom: 15em;
+	transition: all 0.5s ease;
 }
 
+#content li:hover {
+	cursor: pointer;
+}
+
+#content li:hover h3 {
+	padding-top: 0;
+	padding-bottom: 0;
+
+}
 
 #content li p {
 	padding: 0.5em 0.7em;
 	border-radius: 1em;
 	text-align: justify;
-	text-shadow: 0 0 0.1em white;
 	line-height: 1.3em;
 	background-color: rgba(255, 255, 255, 0.4);
 }
@@ -191,7 +198,44 @@ footer {
 #content p {
 }
 
-/* About Page */
+/* Map Page */
+
+#map figure {
+	margin: 0em 1em;
+}
+
+#map figure img {
+	border-radius: 1em;
+	border: 1px solid darkgreen;
+	width: 100%;
+}
+
+#map ul {
+	margin: 1em 1em 0 1em;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+#map li {
+	font-family: "Milonga", serif;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.3em 0.6em 0.3em 0.6em;
+	border-radius: 1em;
+	border: 1px solid darkgreen;
+	margin: 0 0.5em 1em 0;
+	background-color: rgba(255, 255, 255, 0.5);
+
+}
+#map li:hover {
+	cursor: pointer;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	text-shadow: 0 0 0.1em black;
+}
+
 
 @media only screen and (min-width: 480px){
 
