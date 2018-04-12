@@ -41,7 +41,7 @@ header {
 
 header figure img {
 	width: 300px;
-	margin: 1em 0 0 1em;
+	margin-top: 1em;
 }
 
 header nav ul {
@@ -257,6 +257,10 @@ footer {
 		justify-content: space-between;
 	}
 
+	header figure img {
+		margin-left: 3em;
+	}
+
 	header nav ul {
 		flex-direction: column;
 		justify-content: center;
@@ -284,11 +288,6 @@ footer {
 }
 
 @media only screen and (min-width: 1024px) {
-
-	footer {
-		margin-top: 1.5em;
-		justify-content: center;
-	}
 
 	#index .summary, #index .author {
 		margin-right: 1em;
