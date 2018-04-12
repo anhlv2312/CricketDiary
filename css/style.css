@@ -110,6 +110,21 @@ footer {
 	background-size: cover;
 }
 
+.container p {
+	margin-top: 0.7em;
+	padding: 0.5em 0.7em;
+	border-radius: 1em;
+	text-align: justify;
+	line-height: 1.3em;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.container h2 {
+	margin: 0.2em;
+	color: white;
+	text-shadow: 0 0 0.1em black;
+}
+
 #index .summary {
 	height: 70vh;
 	background-image: url("../images/front_cover_en.jpg");
@@ -120,20 +135,10 @@ footer {
 	background-image: url("../images/author.jpg");
 }
 
-
-#index h2 {
-	margin: 0.2em;
-	color: white;
-	text-shadow: 0 0 0.1em black;
+#index .info {
+	background-image: url("../images/back_cover.jpg");
 }
 
-#index p {
-	padding: 0.5em 0.7em;
-	border-radius: 1em;
-	text-align: justify;
-	line-height: 1.3em;
-	background-color: rgba(255, 255, 255, 0.4);
-}
 
 #index img {
 	width: 70%;
