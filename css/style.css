@@ -165,6 +165,7 @@ footer {
 }
 
 #content li {
+	width: 100%;
 	border: 1px solid darkgreen;
 	display: flex;
 	flex-direction: column;
