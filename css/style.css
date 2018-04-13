@@ -273,10 +273,6 @@ footer {
 		flex-wrap: wrap;
 	}
 
-	#index .summary {
-		margin-right: 1em;
-	}
-
 	#index .summary, #index .author {
 		width: 44%;
 	}
@@ -288,10 +284,6 @@ footer {
 }
 
 @media only screen and (min-width: 1024px) {
-
-	#index .summary, #index .author {
-		margin-right: 1em;
-	}
 
 	#index .summary, #index .author, #index .info {
 		width: 28%;
