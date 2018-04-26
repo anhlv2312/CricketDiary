@@ -182,7 +182,7 @@ footer {
 }
 
 #about .author {
-	height: 50vh;
+	height: 70vh;
 	background-image: url("../images/author.jpg");
 }
 
@@ -352,7 +352,6 @@ footer {
 	}
 
 	#about .info, #about .author {
-		min-height: 70vh;
 		width: 49%;
 	}
 
