@@ -118,11 +118,16 @@ footer {
 }
 
 .container p {
+	margin-top: 0.7em;
 	padding: 0.5em 0.7em;
 	border-radius: 1em;
 	text-align: justify;
 	line-height: 1.3em;
 	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.container p:first-of-type {
+	margin-top: 0;
 }
 
 .container h2 {
@@ -177,7 +182,7 @@ footer {
 }
 
 #about .author {
-	height: 70vh;
+	height: 50vh;
 	background-image: url("../images/author.jpg");
 }
 
@@ -321,6 +326,7 @@ footer {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 
 	header nav li {
@@ -346,6 +352,7 @@ footer {
 	}
 
 	#about .info, #about .author {
+		min-height: 70vh;
 		width: 49%;
 	}
 
