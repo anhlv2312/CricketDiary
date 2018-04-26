@@ -28,7 +28,7 @@ body {
 	font-family: "Vollkorn", serif;
 	font-size: 14pt;
 	color: black;
-	text-shadow: 0 0 0.1em white;
+	text-shadow: 0 0 1px white;
 	display: flex;
 	flex-direction: column;
 }
@@ -37,12 +37,16 @@ body {
 
 header {
 	flex-direction: column;
+	justify-content: space-around;
 	text-align: center;
+}
+
+header figure {
+	margin-top: 1em;
 }
 
 header figure img {
 	width: 300px;
-	margin-top: 1em;
 }
 
 header nav ul {
@@ -53,6 +57,8 @@ header nav ul {
 }
 
 header nav li {
+	text-align: center;
+
 	margin: 0 1em 0.5em 1em;
 }
 
@@ -66,21 +72,23 @@ header nav a {
 	border: 1px solid darkgreen;
 	background: rgba(255, 255, 255, 0.5);;
 	color: black;
+	white-space: nowrap;
+	transition: background 0.3s ease;
 }
 
 header nav a:hover {
 	border: 1px solid darkgreen;
 	color: white;
-	background: rgba(0, 96, 0, 0.5);
-	text-shadow: 0 0 0.1em black;
+	background: rgba(64,127,64,0.5);
+	text-shadow: 0 0 1px black;
 
 }
 
 header nav li.active a {
 	border: 1px solid darkgreen;
 	color: white;
-	background: rgba(0, 96, 0, 1);
-	text-shadow: 0 0 0.1em black;
+	background: rgba(64,127,64,1);
+	text-shadow: 0 0 1px black;
 }
 
 main {
@@ -93,11 +101,9 @@ footer {
 	margin-bottom: 1em;
 }
 
-
-
-/* Index Page */
-
+/* Container Box */
 .container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -112,7 +118,6 @@ footer {
 }
 
 .container p {
-	margin-top: 0.7em;
 	padding: 0.5em 0.7em;
 	border-radius: 1em;
 	text-align: justify;
@@ -127,18 +132,52 @@ footer {
 	text-shadow: 0 0 0.1em black;
 }
 
+/* Index Page */
+
+#home {
+	justify-content: center;
+}
+
+#home nav {
+	flex-direction: column;
+	align-items: center;
+}
+
+#home nav button {
+	width: 100%;
+	outline: none;
+	padding-top: 0.2em;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	margin-top: 0.5em;
+	height: 3em;
+	border: 1px solid darkgreen;
+	border-radius: 0.5em;
+	background: rgba(64,127,64,0.8);
+	color: white;
+	transition: all 0.3s ease;
+	text-shadow: 0 0 2px black;
+}
+
+#home nav button:hover {
+	cursor: pointer;
+	color: black;
+	background: rgba(255,255,255,0.8);
+	text-shadow: 0 0 2px white;
+}
+
+
+#home .summary {
+	background-image: url("../images/about.jpg");
+}
+
 #about {
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-#about .summary {
-	height: 60vh;
-	background-image: url("../images/front_cover_en.jpg");
-}
-
 #about .author {
-	height: 60vh;
+	height: 70vh;
 	background-image: url("../images/author.jpg");
 }
 
@@ -165,6 +204,7 @@ footer {
 }
 
 #content li {
+	position: relative;
 	width: 100%;
 	border: 1px solid darkgreen;
 	display: flex;
@@ -189,17 +229,22 @@ footer {
 	padding: 0.5em 0.6em;
 	margin-bottom: 1em;
 	border-radius: 1em;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.4);
+	transition: all 0.4s ease-out;
 	text-transform: uppercase;
-	transition: all 0.3s ease;
 }
 
 #content li p {
+	opacity: 0;
+	position: absolute;
+	bottom: -100%;
+	right: 1em;
+	left: 1em;
 	padding: 0.5em 0.7em;
 	border-radius: 1em;
 	line-height: 1.3em;
-	background-color: rgba(255, 255, 255, 0.5);
-	transition: all 0.3s ease;
+	background-color: rgba(255, 255, 255, 0.8);
+	transition: all 0.4s ease-out;
 }
 
 #content li:hover h3 {
@@ -207,7 +252,8 @@ footer {
 }
 
 #content li:hover p {
-	background-color: rgba(255, 255, 255, 0.8);
+	bottom: 1em;
+	opacity: 1;
 }
 
 
@@ -232,12 +278,13 @@ footer {
 	border: 1px solid darkgreen;
 	margin: 0 0.5em 0.5em 0;
 	background-color: rgba(255, 255, 255, 0.5);
+	transition: background 0.3s ease;
 
 }
 #map li:hover {
 	cursor: pointer;
 	color: white;
-	background-color: rgba(0, 96, 0, 0.5);
+	background-color: rgba(64,127,64,0.5);
 	text-shadow: 0 0 0.1em black;
 }
 
@@ -261,10 +308,11 @@ footer {
 @media only screen and (min-width: 900px) {
 	header {
 		flex-direction: row;
-		justify-content: space-between;
+		/*justify-content: space-between;*/
 	}
 
-	header figure img {
+	header figure {
+		margin-top: 1em;
 		margin-left: 3em;
 	}
 
@@ -272,14 +320,32 @@ footer {
 		margin-top: 1em;
 		flex-direction: row;
 		justify-content: space-between;
-
+		align-items: center;
 	}
 
 	header nav li {
 		margin-left: 0;
 	}
 
-	#about .summary, #about .author {
+	#home .summary {
+		padding: 3em 0;
+		height: 70vh;
+		width: 66%;
+	}
+
+	#home p {
+		border: 1px solid darkgreen;
+		font-size: 1.2em;
+		align-self: center;
+		width: 66%;
+		margin-bottom: 1em;
+	}
+
+	#home nav button {
+		width: 66%;
+	}
+
+	#about .info, #about .author {
 		width: 49%;
 	}
 
@@ -291,7 +357,11 @@ footer {
 
 @media only screen and (min-width: 1300px) {
 
-	#about .summary, #about .author, #about .info {
+	#about .info {
+		width: 66%;
+	}
+
+	#about .author {
 		width: 32%;
 	}
 
