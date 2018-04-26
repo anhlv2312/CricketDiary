@@ -46,15 +46,14 @@ header figure img {
 }
 
 header nav ul {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	margin-top: 0.2em;
 	width: 100%;
-	transition: all 1s ease;
 }
 
 header nav li {
-	margin: 0.2em 1em;
+	margin: 0 1em 0.5em 1em;
 }
 
 header nav a {
@@ -62,7 +61,7 @@ header nav a {
 	display: block;
 	text-decoration: none;
 	font-family: "Milonga", serif;
-	padding: 0.5em 0;
+	padding: 0.5em 2em;
 	border-radius: 0.2em;
 	border: 1px solid darkgreen;
 	background: rgba(255, 255, 255, 0.5);;
@@ -128,27 +127,27 @@ footer {
 	text-shadow: 0 0 0.1em black;
 }
 
-#home {
+#about {
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-#home .summary {
+#about .summary {
 	height: 60vh;
 	background-image: url("../images/front_cover_en.jpg");
 }
 
-#home .author {
+#about .author {
 	height: 60vh;
 	background-image: url("../images/author.jpg");
 }
 
-#home .info {
+#about .info {
 	background-image: url("../images/back_cover.jpg");
 }
 
 
-#home img {
+#about img {
 	width: 70%;
 	border-radius: 1em;
 }
@@ -270,12 +269,17 @@ footer {
 	}
 
 	header nav ul {
-		flex-direction: column;
-		justify-content: center;
-		width: 400px;
+		margin-top: 1em;
+		flex-direction: row;
+		justify-content: space-between;
+
 	}
 
-	#home .summary, #home .author {
+	header nav li {
+		margin-left: 0;
+	}
+
+	#about .summary, #about .author {
 		width: 49%;
 	}
 
@@ -287,7 +291,7 @@ footer {
 
 @media only screen and (min-width: 1300px) {
 
-	#home .summary, #home .author, #home .info {
+	#about .summary, #about .author, #about .info {
 		width: 32%;
 	}
 
