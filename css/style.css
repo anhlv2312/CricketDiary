@@ -12,16 +12,19 @@ h1, h2, a {
 	font-family: "Milonga", "Georgia", serif;
 }
 
-h3, form {
+h4, form {
 	font-family: "Helvetica", "Arial", sans-serif;
 }
 
 body {
 	font-family: "Vollkorn", "Times New Roman", serif;
-	font-size: 12pt;
+	font-size: 14px;
 	text-align: justify;
 }
 
+
+
+/* Top Menu Bar */
 
 #main-menu {
 	padding: 0.7em 0.5em;
@@ -100,6 +103,9 @@ body {
 	background: #c1946a;
 }
 
+
+/* Header and Title */
+
 header {
 	position: relative;
 	background: url('../images/front_cover_square.jpg');
@@ -152,16 +158,7 @@ header h1 {
 	border: 1px solid #e6e2d3;
 }
 
-main {
-
-}
-
-footer {
-	background: black;
-	color: #3e4444;
-	text-align: center;
-	padding: 1em 0;
-}
+/* Home Page Body */
 
 #home-page section {
 	padding: 1em;
@@ -191,12 +188,12 @@ footer {
 	background: #e6e2d3;
 }
 
-#summary h4 {
+#summary h3 {
 	padding: 1em;
 	font-size: 1.5em;
 }
 
-#summary h4:first-letter {
+#summary h3:first-letter {
 	float: left;
 	font-size: 3em;
 	margin-top: 0.25em;
@@ -205,8 +202,7 @@ footer {
 }
 
 #foreword {
-	font-size: 1.2em;
-	background: #82b74b;
+	font-size: 1.4em;
 }
 
 #foreword figure img{
@@ -231,17 +227,24 @@ footer {
 }
 
 #feedback {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background: #3e4444;
 	color: white;
 }
 
-#feedback h3 {
-	color: #82b74b;
+#feedback h2 {
+	width: 100%;
 }
 
 #feedback article {
 	color: #c1946a;
 	margin-bottom: 1em;
+}
+
+#feedback article h3 {
+	color: #82b74b;
 }
 
 #feedback blockquote {
@@ -262,9 +265,13 @@ footer {
 	margin-right: 0.2em;
 }
 
-#feedback .add-feedback a {
+#feedback #add-feedback a {
 	text-decoration: none;
 	color: white;
+}
+
+#feedback #feedback-popup {
+	width: 100%;
 }
 
 #feedback form {
@@ -317,6 +324,15 @@ footer {
 	font-size: 1em;
 }
 
+#feedback fieldset {
+	height: 200px;
+}
+
+#feedback fieldset:last-of-type {
+	padding: 0.5em 0 0 0;
+	background: none;
+}
+
 #feedback textarea {
 	font-size: 1em;
 	border-radius: 0.3em;
@@ -324,12 +340,7 @@ footer {
 	border: 1px solid #c1946a;
 	resize: none;
 	width: 100%;
-	height: 100px;
-}
-
-#feedback fieldset:last-of-type {
-	padding: 0.5em 0 0 0;
-	background: none;
+	height: 80%;
 }
 
 #feedback button {
@@ -354,12 +365,142 @@ footer {
 }
 
 
+/* Content Page Body */
+
+
+#content-page main {
+	padding: 1em;
+}
+
+#content-page main ul {
+	display: flex;
+	flex-direction: column;
+}
+
+#content-page main li {
+	display: flex;
+	justify-content: center;
+	margin: 1em 0;
+	position: relative;
+}
+
+#content-page main li h2 {
+	text-transform: uppercase;
+	top: 0;
+	margin-top: 0.5em;
+	z-index: 8;
+	font-size: 2em;
+	position: absolute;
+	text-align: center;
+	text-shadow: 0px 0px 10px white;
+}
+
+#content-page figure {
+	width: 80%;
+	position: relative;
+	text-align: center;
+}
+
+#content-page figure figcaption {
+	padding: 1em;
+	font-size: 1.2em;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-shadow: 0px 0px 5px white;
+}
+
+#content-page figure img {
+	width: 100%;
+	border-radius: 5%;
+	border: 1px solid #3e4444;
+	box-shadow: 0px 0px 10px #3e4444;
+}
+
+
+#content-page li:hover{
+	cursor: pointer;
+}
+
+
+
+
+/* Page Footer */
+footer {
+	background: black;
+	color: #3e4444;
+	text-align: center;
+	padding: 1em 0;
+}
+
+
+/* For widescreen browser */
 
 @media only screen and (min-width: 750px){
+
+	body {
+		font-size: 16px;
+	}
+
 	#main-menu ul {
 		flex-direction: row;
-		justify-content: flex-end;
+		justify-content: center;
 	}
+
+	#main-menu li {
+		margin: 0 0.5em;
+	}
+
+	#summary h3 {
+		padding: 1em 10vw;
+	}
+
+	#summary, #foreword, #author {
+		overflow: auto;
+	}
+
+	#foreword figure img{
+		width: 300px;
+		float: left;
+		margin: 0 1em 1em 0;
+		border-radius: 5%;
+		border: 1px solid #405d27;
+		box-shadow: 0px 0px 5px #405d27;
+	}
+
+	#author figure img{
+		width: 300px;
+		float: right;
+		margin: 0 0 1em 1em;
+		border-radius: 5%;
+		border: 1px solid #405d27;
+		box-shadow: 0px 0px 5px #405d27;
+	}
+
+	#feedback article {
+		width: 80%;
+	} 
+
+	#feedback blockquote {
+		padding-left: 2em;
+		font-size: 1.2em;
+		font-style: italic;
+	}
+
+	#feedback form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	#feedback fieldset {
+		width: 49%;
+	}
+
+	#feedback fieldset:last-of-type {
+		width: 100%;
+	}
+
 }
 
 
