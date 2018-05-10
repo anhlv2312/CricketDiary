@@ -1,7 +1,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	user-select: none;
 	box-sizing: border-box;
 }
 
@@ -261,6 +260,20 @@ footer {
 	opacity: 1;
 }
 
+
+/* Gallery Page */
+
+#gallery ul {
+	display: flex;
+	flex-wrap: wrap;
+} 
+
+#gallery li {
+	background-size: cover;
+	width: 240px;
+	height: 320px;
+	margin: 3px;
+} 
 
 /* Map Page */
 #map {
