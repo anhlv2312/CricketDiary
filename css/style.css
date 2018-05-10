@@ -147,12 +147,12 @@ footer {
 	background: #c1946a;
 }
 
-#summary p {
+#summary h4 {
 	padding: 1em;
 	font-size: 1.5em;
 }
 
-#summary p:first-letter {
+#summary h4:first-letter {
 	float: left;
 	font-size: 3em;
 	margin-top: 0.25em;
