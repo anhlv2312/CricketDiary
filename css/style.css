@@ -639,7 +639,7 @@ footer {
 	} 
 
 	#feedback blockquote {
-		padding-left: 2em;
+		padding-left: 4em;
 		font-size: 1.2em;
 		font-style: italic;
 	}
@@ -783,9 +783,9 @@ footer {
 
 #float-list li.frogs {
 	width: 12%;
-	height: 7%;
+	height: 7.5%;
 	top: 1%;
-	left: 18%;
+	left: 18.5%;
 }
 
 #float-list li.frogs p {
