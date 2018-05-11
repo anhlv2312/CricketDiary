@@ -31,12 +31,12 @@ $(document).ready(function() {
 	});
 
 	$('#float-list li h2').mouseenter(function(event){
-		if (event.target === this) {
+		if (event.target == this) {
 			$(this).parent().children("p").addClass('active'); 
 		}
 	});
 	$('#float-list li h2').mouseleave(function(event){
-		if (event.target === this) {
+		if (event.target == this) {
 			$(this).parent().children("p").removeClass('active');
 		}
 	});

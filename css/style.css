@@ -425,10 +425,6 @@ header h1 {
 	opacity: 1;
 }
 
-#content-page figure:hover figcaption{
-	opacity: 0;
-}
-
 /* Gallery Page Body */
 
 #gallery-page main li {
@@ -630,11 +626,11 @@ footer {
 	}
 
 	#content-page figure {
-		width: 400px;
+		width: 300px;
 	}
 
 	#content-page main li h2 {
-		width: 400px;
+		width: 300px;
 	}
 
 	#content-page main li {
