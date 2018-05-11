@@ -47,6 +47,7 @@ body {
 	margin: 0.3em;
 	padding: 0.5em 1em;
 	border-radius: 0.5em;
+	border: 1px solid rgba(0,0,0,0.7);
 	background: rgba(255,255,255,0.3);
 	text-decoration: none;
 	display: block;
@@ -55,12 +56,14 @@ body {
 }
 
 #main-menu a:hover {
-	background: rgba(255,255,255,1);
+	background: white;
+	text-shadow: 0px 0px 3px #3e4444;
 	color: black;
 }
 
 #main-menu .active a {
-	background: rgba(255,255,255,1);
+	background: #82b74b;
+	text-shadow: 0px 0px 3px #3e4444;
 	color: black;
 }
 
@@ -341,7 +344,6 @@ header h1 {
 	color: #e6e2d3;
 	background: #405d27;
 	border: 1px solid #e6e2d3;
-	text-shadow: 0px 0px 1px black;
 	padding: 0.5em 1em;
 	transition: all 0.5s ease;
 	cursor: pointer;
@@ -469,8 +471,86 @@ header h1 {
 
 /* Map Page Body */
 
-#map-page figure img {
-	width: 100vw;
+#world-map {
+	position: relative;
+}
+
+#world-map figure img {
+	display: block;
+	width: 100%;
+}
+
+#static-list {
+	padding: 1em;
+}
+
+#static-list li {
+	padding: 0.5em;
+}
+
+#static-list li h2 {
+	margin-bottom: 0.5em;
+}
+
+#float-list {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+
+#float-list li { 
+	position: absolute;
+	cursor: pointer;
+}
+
+
+#float-list li p {
+	font-size: 1.2em;
+	z-index: 9;
+	opacity: 0;
+	position: absolute;
+	min-width: 250px;
+	width: 20vw;
+	background: rgba(255,255,255,0.8);
+	border-radius: 1em;
+	padding: 1em;
+	border: 1px solid #405d27;
+	transition: opacity 1s ease;
+}
+
+#float-list li p.active {
+	opacity: 1;
+}
+
+#float-list li h2 {
+	z-index: 9;
+	width: 100%;
+	height: 100%;
+	text-indent: -10000px;
+	border-radius: 1em;
+	animation-name: animation;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	border: 4px solid orange;
+}
+
+
+@keyframes animation {
+	0% {
+		border-color: #3e4444;
+	}
+
+	20% {
+		border-color: #feb236;
+	}
+	80% {
+		border-color: #ff7b25;
+	}
+	100% {
+		border-color: #3e4444;
+	}
 }
 
 /* Page Footer */
@@ -480,7 +560,6 @@ footer {
 	text-align: center;
 	padding: 1em 0;
 }
-
 
 /* For widescreen browser */
 
@@ -566,6 +645,138 @@ footer {
 		width: auto;
 		height: 90vh;
 	}
+
+	#float-list {
+		display: block;
+	}
+
+	#static-list {
+		display: none;
+	}
+}
+
+
+
+/* Land Coordinates */
+
+#float-list li.dragonfiles {
+	width: 18.5%;
+	height: 5%;
+	top: 88%;
+	left: 66%;
+}
+
+#float-list li.dragonfiles p{
+	bottom: 100%;
+	right: 100%;
+}
+
+#float-list li.lagoon {
+	width: 8%;
+	height: 5%;
+	top: 72.5%;
+	left: 6.5%;
+}
+
+#float-list li.lagoon p {
+	bottom: 100%;
+	left: 100%;
+}
+
+#float-list li.spiders {
+	width: 12%;
+	height: 5%;
+	top: 54%;
+	left: 1%;
+}
+
+#float-list li.spiders p {
+	bottom: 100%;
+	left: 100%;
+}
+
+#float-list li.ants {
+	width: 15%;
+	height: 5%;
+	top: 37%;
+	left: 81%;
+}
+
+#float-list li.ants p {
+	top: 100%;
+	right: 100%;
+}
+
+#float-list li.pineapple {
+	width: 10%;
+	height: 7%;
+	top: 13%;
+	left: 66.5%;
+}
+
+#float-list li.pineapple p {
+	top: 100%;
+	right: 100%;
+}
+
+#float-list li.arena {
+	width: 6%;
+	height: 5%;
+	top: 11.5%;
+	left: 54%;
+}
+
+#float-list li.arena p {
+	top: 100%;
+	right: 100%;
+}
+
+#float-list li.reed {
+	width: 11.5%;
+	height: 5%;
+	top: 1%;
+	left: 51.5%;
+}
+
+#float-list li.reed p {
+	top: 100%;
+	right: 100%;
+}
+
+#float-list li.frogs {
+	width: 11.5%;
+	height: 7%;
+	top: 1%;
+	left: 18.5%;
+}
+
+#float-list li.frogs p {
+	top: 100%;
+	left: 100%;
+}
+
+#float-list li.kingfisher {
+	width: 14.5%;
+	height: 5%;
+	top: 65%;
+	left: 49.5%;
+}
+
+#float-list li.kingfisher p {
+	bottom: 100%;
+	left: 100%;
+}
+
+#float-list li.longhorn {
+	width: 12.5%;
+	height: 5%;
+	top: 42%;
+	left: 49%;
+}
+
+#float-list li.longhorn p {
+	bottom: 100%;
+	right: 100%;
 }
 
 

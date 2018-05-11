@@ -1,13 +1,14 @@
 $(document).ready(function() {
 	
 	if ($(window).width() < 750) {
-		$('#trigger-icon').show();
-		$('#main-menu ul').hide();
 		$('#main-menu h2').show();
+		$('#main-menu ul').hide();
 		$('#main-menu li.active').hide();
+
+		$('#trigger-icon').show();
 		$('#trigger-icon').click(function(event){
 			$('#main-menu ul').toggle();
-		});
+		});	
 	}
 	
 	$('#slideshow ul li').hide();
@@ -26,5 +27,16 @@ $(document).ready(function() {
 		$('#slideshow ul li:last-child').show();
 	});
 
+
+	$('#float-list li h2').mouseenter(function(event){
+		if (event.target === this) {
+			$(this).parent().children("p").addClass('active'); 
+		}
+	});
+	$('#float-list li h2').mouseleave(function(event){
+		if (event.target === this) {
+			$(this).parent().children("p").removeClass('active');
+		}
+	});
 
 });
