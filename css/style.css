@@ -601,7 +601,7 @@ footer {
 	}
 
 	#summary h3 {
-		padding: 1em 10vw;
+		padding: 1em 15vw;
 	}
 
 	#foreword, #author {
@@ -617,20 +617,20 @@ footer {
 	}
 
 	#foreword p {
-		margin: 0 10vw;
+		margin: 0 15vw;
 	}
 
 	#author figure img{
 		width: 300px;
 		float: left;
-		margin: 0 1em 1em 10vw;
+		margin: 0 1em 1em 15vw;
 		border-radius: 5%;
 		border: 1px solid #405d27;
 		box-shadow: 0px 0px 5px #405d27;
 	}
 
 	#author p {
-		margin: 0 10vw 0 0;
+		margin: 0 15vw 0 0;
 	}
 
 	#feedback article {
@@ -644,19 +644,9 @@ footer {
 		font-style: italic;
 	}
 
-	#feedback form {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-
 	#feedback fieldset {
-		width: 49%;
-	}
-
-	#feedback fieldset:last-of-type {
-		padding: 0;
-		width: 100%;
+		margin-left: 15vw;
+		margin-right: 15vw;
 	}
 
 
@@ -686,6 +676,23 @@ footer {
 
 }
 
+@media only screen and (min-width: 1300px) {
+	#feedback form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	#feedback fieldset {
+		width: 30vw;
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	#feedback fieldset:last-of-type {
+		padding: 0;
+		width: 100vw;
+	}
+}
 
 
 /* Land Coordinates */
