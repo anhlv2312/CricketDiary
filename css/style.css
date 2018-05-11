@@ -646,13 +646,6 @@ footer {
 		height: 90vh;
 	}
 
-	#float-list {
-		display: block;
-	}
-
-	#static-list {
-		display: none;
-	}
 }
 
 

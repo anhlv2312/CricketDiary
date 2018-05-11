@@ -9,6 +9,9 @@ $(document).ready(function() {
 		$('#trigger-icon').click(function(event){
 			$('#main-menu ul').toggle();
 		});	
+	} else {
+		$('#float-list').show();
+		$('#static-list').hide();
 	}
 	
 	$('#slideshow ul li').hide();
@@ -26,7 +29,6 @@ $(document).ready(function() {
 		$('#slideshow ul li:last-child').prependTo($('#slideshow ul'));
 		$('#slideshow ul li:last-child').show();
 	});
-
 
 	$('#float-list li h2').mouseenter(function(event){
 		if (event.target === this) {
