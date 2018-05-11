@@ -12,6 +12,7 @@ $(document).ready(function() {
 	} else {
 		$('#float-list').show();
 		$('#static-list').hide();
+		$('#float-list li p').hide();
 	}
 	
 	$('#slideshow ul li').hide();
@@ -31,14 +32,12 @@ $(document).ready(function() {
 	});
 
 	$('#float-list li h2').mouseenter(function(event){
-		if (event.target == this) {
-			$(this).parent().children("p").addClass('active'); 
-		}
+		$(this).parent().children("p").show(); 
+		$(this).parent().children("p").addClass('active');
 	});
 	$('#float-list li h2').mouseleave(function(event){
-		if (event.target == this) {
-			$(this).parent().children("p").removeClass('active');
-		}
+		$(this).parent().children("p").removeClass('active');
+		$(this).parent().children("p").hide(); 
 	});
 
 });
