@@ -100,7 +100,7 @@ body {
 }
 
 #trigger-icon:hover span.line {
-	background: #c1946a;
+	background: #82b74b;
 }
 
 
@@ -146,7 +146,6 @@ header h1 {
 	color: black;
 	background: white;
 	border: 1px solid black;
-	text-shadow: 0px 0px 1px black;
 	padding: 0.5em 1em;
 	box-shadow: 0px 0px 5px black;
 	transition: all 0.5s ease;
@@ -227,15 +226,8 @@ header h1 {
 }
 
 #feedback {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	background: #3e4444;
 	color: white;
-}
-
-#feedback h2 {
-	width: 100%;
 }
 
 #feedback article {
@@ -287,11 +279,12 @@ header h1 {
 }
 
 #feedback legend {
+	font-weight: bold;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	background: #c1946a;
 	border-radius: 0.5em;
-	padding: 0.4em 1.2em 0.3em 1em; 
+	padding: 0.6em 1.2em 0.5em 1em; 
 }
 
 #feedback .form-element {
@@ -324,10 +317,6 @@ header h1 {
 	font-size: 1em;
 }
 
-#feedback fieldset {
-	height: 200px;
-}
-
 #feedback fieldset:last-of-type {
 	padding: 0.5em 0 0 0;
 	background: none;
@@ -336,11 +325,12 @@ header h1 {
 #feedback textarea {
 	font-size: 1em;
 	border-radius: 0.3em;
+	padding: 0.3em 0.5em;
 	outline: none;
 	border: 1px solid #c1946a;
 	resize: none;
 	width: 100%;
-	height: 80%;
+	height: 140px;
 }
 
 #feedback button {
@@ -367,14 +357,15 @@ header h1 {
 
 /* Content Page Body */
 
-
 #content-page main {
 	padding: 1em;
 }
 
 #content-page main ul {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly
 }
 
 #content-page main li {
@@ -385,18 +376,25 @@ header h1 {
 }
 
 #content-page main li h2 {
+	padding: 0.5em 0;
+	width: 80%;
 	text-transform: uppercase;
+	color: white;
 	top: 0;
-	margin-top: 0.5em;
+	margin-top: 0.8em;
 	z-index: 8;
-	font-size: 2em;
+	font-size: 1.5em;
+	background: rgba(0,0,0,0.5);
 	position: absolute;
 	text-align: center;
-	text-shadow: 0px 0px 10px white;
+	text-shadow: 0px 0px 5px black;
 }
 
 #content-page figure {
+	cursor: pointer;
 	width: 80%;
+	border-radius: 5%;
+	border: 1px solid #3e4444;
 	position: relative;
 	text-align: center;
 }
@@ -408,22 +406,72 @@ header h1 {
 	position: absolute;
 	bottom: 0;
 	text-shadow: 0px 0px 5px white;
+	transition: opacity 0.5s ease;
 }
 
 #content-page figure img {
+	display: block;
+	opacity: 0.3;
 	width: 100%;
 	border-radius: 5%;
-	border: 1px solid #3e4444;
 	box-shadow: 0px 0px 10px #3e4444;
+	transition: opacity 0.5s ease;
 }
 
 
-#content-page li:hover{
+#content-page figure:hover img{
+	opacity: 1;
+}
+
+#content-page figure:hover figcaption{
+	opacity: 0;
+}
+
+/* Gallery Page Body */
+
+#gallery-page main li {
+	height: auto;
+}
+
+#gallery-page img {
+	display: block;
+	width: 100%;
+}
+
+#slideshow {
+	position: relative;
+}
+
+#slideshow .prev, #slideshow .next {
+	z-index: 9;
 	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	padding: 0.5em;
+	color: white;
+	font-weight: bold;
+	font-size: 2em;
+	transition: 0.6s ease;
+	border-radius: 0 0.5em 0.5em 0;
+	background: rgba(0,0,0,0.5);
+	display: none;
+}
+
+#slideshow a:hover {
+	background: rgba(0,0,0,0.8);
+}
+
+#slideshow .next {
+	right: 0;
+	border-radius: 0.5em 0 0 0.5em;
 }
 
 
+/* Map Page Body */
 
+#map-page figure img {
+	width: 100vw;
+}
 
 /* Page Footer */
 footer {
@@ -455,7 +503,7 @@ footer {
 		padding: 1em 10vw;
 	}
 
-	#summary, #foreword, #author {
+	#foreword, #author {
 		overflow: auto;
 	}
 
@@ -478,7 +526,8 @@ footer {
 	}
 
 	#feedback article {
-		width: 80%;
+		margin-left: 10%;
+		margin-right: 5%;
 	} 
 
 	#feedback blockquote {
@@ -501,6 +550,22 @@ footer {
 		width: 100%;
 	}
 
+	#content-page figure {
+		width: 400px;
+	}
+
+	#content-page main li h2 {
+		width: 400px;
+	}
+
+	#content-page main li {
+		margin: 1em 1em;
+	}
+
+	#slideshow img {
+		width: auto;
+		height: 90vh;
+	}
 }
 
 
