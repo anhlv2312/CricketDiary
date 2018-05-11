@@ -32,12 +32,16 @@ $(document).ready(function() {
 	});
 
 	$('#float-list li h2').mouseenter(function(event){
+		$(this).addClass('stop-animation');
 		$(this).parent().children("p").show(); 
 		$(this).parent().children("p").addClass('active');
+		$(this).addClass('stop-animation');
 	});
 	$('#float-list li h2').mouseleave(function(event){
+		$(this).removeClass('stop-animation');
 		$(this).parent().children("p").removeClass('active');
-		$(this).parent().children("p").hide(); 
+		$(this).parent().children("p").hide();
+
 	});
 
 });

@@ -32,7 +32,7 @@ body {
 	top: 0;
 	z-index: 99;
 	background: #3e4444;
-	border-bottom: 1px solid #405d27;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
 #main-menu ul {
@@ -118,6 +118,7 @@ header {
 	background-size: cover;
 	background-position: center center;
 	height: 600px;
+	transition: background 0.5s linear;
 }
 
 header h1 {
@@ -193,8 +194,15 @@ header h1 {
 	background: #e6e2d3;
 }
 
+#summary figure img{
+	width: 60%;
+	border-radius: 5%;
+	border: 1px solid #3e4444;
+	box-shadow: 0px 0px 10px #3e4444;
+}
+
 #summary h3 {
-	padding: 1em;
+	padding: 1.5em;
 	font-size: 1.5em;
 }
 
@@ -208,14 +216,16 @@ header h1 {
 
 #foreword {
 	font-size: 1.4em;
+	background: url('../images/about_square.jpg');
+	background-size: cover;
+	background-position: bottom center;
 }
 
-#foreword figure img{
-	width: 60%;
-	border-radius: 5%;
-	border: 1px solid #3e4444;
-	box-shadow: 0px 0px 10px #3e4444;
+#foreword p {
+	text-shadow: 0px 0px 2px white ;
 }
+
+
 
 
 #author {
@@ -326,6 +336,7 @@ header h1 {
 #feedback fieldset:last-of-type {
 	padding: 0.5em 0 0 0;
 	background: none;
+	text-align: center;
 }
 
 #feedback textarea {
@@ -340,7 +351,8 @@ header h1 {
 }
 
 #feedback button {
-	float: right;
+	width: 10em;
+	display: inline-block;
 	font-weight: bold;
 	font-size: 1em;
 	border-radius: 0.5em;
@@ -350,7 +362,6 @@ header h1 {
 	padding: 0.5em 1em;
 	transition: all 0.5s ease;
 	cursor: pointer;
-	float: right;
 }
 
 #feedback button:hover {
@@ -374,6 +385,7 @@ header h1 {
 }
 
 #content-page main li {
+	background: white;
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
@@ -514,7 +526,7 @@ header h1 {
 	background: rgba(255,255,255,0.8);
 	border-radius: 1em;
 	padding: 1em;
-	border: 1px solid #405d27;
+	border: 1px solid darkorange;
 	transition: opacity 1s ease;
 }
 
@@ -529,24 +541,30 @@ header h1 {
 	text-indent: -10000px;
 	border-radius: 1em;
 	animation-name: animation;
-	animation-duration: 5s;
+	animation-duration: 3s;
 	animation-iteration-count: infinite;
-	/*border: 1px solid orange;*/
+}
+
+#float-list li h2.stop-animation {
+	opacity: 1;
+	animation-name: none;
+	box-shadow: 0px 0px 2em darkorange;
+	border: 1px solid darkorange;
 }
 
 
 @keyframes animation {
-	0% {
-		box-shadow: 0px 0px 2em orange;
+	0%, 10% {
+		box-shadow: 0px 0px 1px darkorange;
+		opacity: 0;
 	}
-	20% {
-		box-shadow: 0px 0px 2em orange;
+	70% {
+		box-shadow: 0px 0px 30px darkorange;
+		opacity: 1;
 	}
-	60% {
-		box-shadow: 0px 0px 1px orange;
-	}
-	100% {
-		box-shadow: 0px 0px 2em orange;
+	90, 100% {
+		box-shadow: 0px 0px 50px darkorange;
+		opacity: 0;
 	}
 }
 
@@ -561,6 +579,12 @@ footer {
 /* For widescreen browser */
 
 @media only screen and (min-width: 750px){
+
+	header {
+		background: url('../images/full_cover.jpg');
+		background-size: cover;
+		background-position: center right;
+	}
 
 	body {
 		font-size: 16px;
@@ -584,27 +608,34 @@ footer {
 		overflow: auto;
 	}
 
-	#foreword figure img{
+	#summary figure img {
 		width: 300px;
-		float: left;
 		margin: 0 1em 1em 0;
 		border-radius: 5%;
 		border: 1px solid #405d27;
 		box-shadow: 0px 0px 5px #405d27;
 	}
 
+	#foreword p {
+		margin: 0 10vw;
+	}
+
 	#author figure img{
 		width: 300px;
-		float: right;
-		margin: 0 0 1em 1em;
+		float: left;
+		margin: 0 1em 1em 10vw;
 		border-radius: 5%;
 		border: 1px solid #405d27;
 		box-shadow: 0px 0px 5px #405d27;
 	}
 
+	#author p {
+		margin: 0 10vw 0 0;
+	}
+
 	#feedback article {
-		margin-left: 10%;
-		margin-right: 5%;
+		margin-left: 15vw;
+		margin-right: 15vw;
 	} 
 
 	#feedback blockquote {
@@ -624,7 +655,16 @@ footer {
 	}
 
 	#feedback fieldset:last-of-type {
+		padding: 0;
 		width: 100%;
+	}
+
+
+	#content-page main {
+		background: url('../images/index.jpg');
+		background-size: cover;
+		background-position: bottom left;
+		background-attachment: fixed;
 	}
 
 	#content-page figure {
@@ -700,8 +740,8 @@ footer {
 
 #float-list li.pineapple {
 	width: 11%;
-	height: 8%;
-	top: 12.5%;
+	height: 7%;
+	top: 13%;
 	left: 66%;
 }
 
@@ -736,8 +776,8 @@ footer {
 
 #float-list li.frogs {
 	width: 12%;
-	height: 8%;
-	top: 0.5%;
+	height: 7%;
+	top: 1%;
 	left: 18%;
 }
 
