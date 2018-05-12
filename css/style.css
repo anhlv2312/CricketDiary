@@ -237,7 +237,7 @@ header h2 {
 	font-size: 1.4em;
 	background: url('../images/about_square.jpg');
 	background-size: cover;
-	background-position: bottom center;
+	background-position: bottom right;
 }
 
 #foreword p {
