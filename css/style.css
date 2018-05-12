@@ -20,9 +20,12 @@ body {
 	font-family: "Vollkorn", "Times New Roman", serif;
 	font-size: 14px;
 	text-align: justify;
+	background: #3e4444;
 }
 
-
+.hide {
+	display: none;
+}
 
 /* Top Menu Bar */
 
@@ -36,10 +39,14 @@ body {
 }
 
 #main-menu ul {
-	text-align: center;
 	display: flex;
+	text-align: center;
 	flex-direction: column;
+	transition: all 0.3s ease;
+}
 
+#main-menu ul.hide {
+	display: none;
 }
 
 #main-menu a {
@@ -56,40 +63,42 @@ body {
 	display: block;
 	color: white;
 	transition: background 0.3s ease;
-	text-shadow: 0px 0px 3px black;
+	text-shadow: 0px 0px 1px black;
 }
 
 #main-menu a:hover {
 	background: #82b74b;
 }
 
-#main-menu .active a {
+#main-menu li.active a {
 	background: white;
-	text-shadow: 0px 0px 3px #3e4444;
+	text-shadow: 0px 0px 1px #3e4444;
 	color: black;
 }
 
-
-#trigger-bar {
-	display: flex;
+#trigger-bar { 
+	display: none;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 1em;
 }
 
+#trigger-bar.enabled { 
+	display: flex;
+}
+
 #trigger-bar h2 {
 	font-size: 1em;
-	letter-spacing: 0.15em; 
+	letter-spacing: 0.2em; 
 	text-transform: uppercase;
 	color: white;
-	display: none;
+	text-shadow: 0px 0px 1px black;
 }
 
 #trigger-icon {
 	padding: 0.5em;
 	display: inline-block;
 	cursor: pointer;
-	display: none;
 }
 
 #trigger-icon span.line {
@@ -108,7 +117,6 @@ body {
 #trigger-icon:hover span.line {
 	background: #82b74b;
 }
-
 
 /* Header and Title */
 
@@ -131,6 +139,10 @@ header h1 {
 	color: white;
 	text-shadow: 0px 0px 10px black;
 	font-size: 4em;
+}
+
+main {
+	background: white;
 }
 
 #action-menu {
@@ -222,10 +234,8 @@ header h1 {
 }
 
 #foreword p {
-	text-shadow: 0px 0px 2px white ;
+	text-shadow: 0px 0px 1px white ;
 }
-
-
 
 
 #author {
@@ -235,7 +245,7 @@ header h1 {
 }
 
 #author figure img {
-	width: 60%;
+	width: 70%;
 	border: 1px solid white;
 	border-radius: 50%;
 	box-shadow: 0px 0px 10px black;
@@ -252,6 +262,7 @@ header h1 {
 }
 
 #feedback article h4 {
+	font-size: 1.2em;
 	color: #82b74b;
 }
 
@@ -291,7 +302,14 @@ header h1 {
 	padding: 1em 1.5em;
 	border: 0;
 	border-radius: 0.8em;
-	margin: 1em 0;
+	margin: 2em 0 0 0;
+}
+
+#feedback fieldset:last-of-type {
+	padding: 0;
+	margin-bottom: 0.5em;
+	background: none;
+	text-align: center;
 }
 
 #feedback legend {
@@ -333,11 +351,6 @@ header h1 {
 	font-size: 1em;
 }
 
-#feedback fieldset:last-of-type {
-	padding: 0.5em 0 0 0;
-	background: none;
-	text-align: center;
-}
 
 #feedback textarea {
 	font-size: 1em;
@@ -362,6 +375,7 @@ header h1 {
 	padding: 0.5em 1em;
 	transition: all 0.5s ease;
 	cursor: pointer;
+	outline: none;
 }
 
 #feedback button:hover {
@@ -385,6 +399,7 @@ header h1 {
 }
 
 #content-page main li {
+	border-radius: 5%;
 	background: white;
 	cursor: pointer;
 	display: flex;
@@ -395,7 +410,7 @@ header h1 {
 
 #content-page main li h2 {
 	padding: 0.5em 0;
-	width: 80%;
+	width: 90%;
 	color: white;
 	top: 0;
 	margin-top: 0.8em;
@@ -408,11 +423,10 @@ header h1 {
 }
 
 #content-page figure {
-	width: 80%;
+	width: 90%;
 	border-radius: 5%;
 	border: 1px solid #3e4444;
 	position: relative;
-	text-align: center;
 }
 
 #content-page figure figcaption {
@@ -421,7 +435,7 @@ header h1 {
 	width: 100%;
 	position: absolute;
 	bottom: 0;
-	text-shadow: 0px 0px 5px white;
+	text-shadow: 0px 0px 1px white;
 	transition: opacity 0.5s ease;
 }
 
@@ -441,17 +455,24 @@ header h1 {
 
 /* Gallery Page Body */
 
-#gallery-page main li {
-	height: auto;
-}
-
-#gallery-page img {
-	display: block;
-	width: 100%;
-}
-
 #slideshow {
 	position: relative;
+}
+
+#slideshow ul {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+
+#slideshow li {
+	transition: all 1s ease;
+}
+
+#slideshow img {
+	width: 100vw;
+	display: block;
 }
 
 #slideshow .prev, #slideshow .next {
@@ -469,8 +490,12 @@ header h1 {
 	display: none;
 }
 
-#slideshow a:hover {
-	background: rgba(0,0,0,0.8);
+#slideshow.enabled ul {
+	flex-direction: row;
+}
+
+#slideshow.enabled a {
+	display: block;
 }
 
 #slideshow .next {
@@ -478,78 +503,35 @@ header h1 {
 	border-radius: 0.5em 0 0 0.5em;
 }
 
+#slideshow a:hover {
+	background: rgba(0,0,0,0.8);
+}
+
+
 
 /* Map Page Body */
 
-#world-map {
+#worldmap {
 	position: relative;
 }
 
-#world-map figure img {
+#worldmap figure img {
 	display: block;
 	width: 100%;
 }
 
-#static-list {
-	padding: 1em;
-}
-
-#static-list li {
-	padding: 0.5em;
-}
-
-#static-list li h2 {
-	margin-bottom: 0.5em;
-}
-
-#float-list {
-	display: none;
-	position: absolute;
+#worldmap ul {
 	width: 100%;
-	height: 100%;
-	top: 0;
+	padding: 0 1em;
 }
 
-#float-list li { 
-	position: absolute;
-	cursor: pointer;
-}
-
-
-#float-list li p {
-	z-index: 9;
-	font-size: 1.2em;
-	opacity: 0;
-	position: absolute;
-	min-width: 250px;
-	width: 20vw;
-	background: rgba(255,255,255,0.8);
-	border-radius: 1em;
-	padding: 1em;
-	border: 1px solid darkorange;
-	transition: opacity 1s ease;
-}
-
-#float-list li p.active {
-	opacity: 1;
-}
-
-#float-list li h2 {
-	z-index: 9;
+#worldmap ul li {
 	width: 100%;
-	height: 100%;
-	text-indent: -10000px;
-	border-radius: 1em;
-	animation-name: animation;
-	animation-duration: 3s;
-	animation-iteration-count: infinite;
+	padding: 1em 0;
 }
 
-#float-list li h2.stop-animation {
-	opacity: 1;
-	animation-name: none;
-	box-shadow: 0px 0px 2em darkorange;
-	border: 1px solid darkorange;
+#worldmap ul li h2 {
+	margin-bottom: 0.3em;
 }
 
 
@@ -562,7 +544,7 @@ header h1 {
 		box-shadow: 0px 0px 30px darkorange;
 		opacity: 1;
 	}
-	90, 100% {
+	90%, 100% {
 		box-shadow: 0px 0px 50px darkorange;
 		opacity: 0;
 	}
@@ -570,15 +552,14 @@ header h1 {
 
 /* Page Footer */
 footer {
-	background: black;
-	color: #3e4444;
+	color: darkgray;
 	text-align: center;
 	padding: 1em 0;
 }
 
 /* For widescreen browser */
 
-@media only screen and (min-width: 750px){
+@media only screen and (min-width: 750px) {
 
 	header {
 		background: url('../images/full_cover.jpg');
@@ -590,19 +571,29 @@ footer {
 		font-size: 16px;
 	}
 
+	#main-menu li {
+		display: block;
+		min-width: 11em;
+		width: 15vw;		
+	}
+
 	#main-menu ul {
 		flex-direction: row;
 		justify-content: center;
 	}
 
-	#main-menu li {
-		min-width: 11em;
-		width: 15vw;
+	#main-menu ul.hide {
+		display: flex;
+	}
+
+	#trigger-bar.enabled {
+		display: none;
 	}
 
 	#summary h3 {
 		padding: 1em 15vw;
 	}
+
 
 	#foreword, #author {
 		overflow: auto;
@@ -630,7 +621,7 @@ footer {
 	}
 
 	#author p {
-		margin: 0 15vw 0 0;
+		margin: 0 15vw 0 15vw;
 	}
 
 	#feedback article {
@@ -658,20 +649,35 @@ footer {
 	}
 
 	#content-page figure {
-		width: 300px;
+		width: 320px;
 	}
 
 	#content-page main li h2 {
-		width: 300px;
+		width: 320px;
 	}
 
 	#content-page main li {
-		margin: 1em 1em;
+		margin: 1em 0.5em;
+	}
+
+	#slideshow ul {
+		flex-direction: row;
+		overflow: auto;
+	}
+
+	#slideshow.enabled ul {
+		padding: 0;
+		flex-wrap: nowrap;
+		overflow: hidden;
+	}
+
+	#slideshow.enabled ul {
+		flex-direction: row;
 	}
 
 	#slideshow img {
+		height: 83vh;
 		width: auto;
-		height: 90vh;
 	}
 
 }
@@ -689,133 +695,190 @@ footer {
 		margin-right: 1em;
 	}
 	#feedback fieldset:last-of-type {
-		padding: 0;
 		width: 100vw;
 	}
+
 }
 
 
-/* Land Coordinates */
+/* Land Coordinates - Only enable when window width greater than 750px */
 
-#float-list li.dragonfiles {
-	width: 18.5%;
-	height: 5%;
-	top: 88%;
-	left: 66%;
+@media only screen and (min-width: 750px) {
+
+	body.js #worldmap ul {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+	}
+
+	body.js #worldmap li { 
+		position: absolute;
+		cursor: pointer;
+	}
+
+
+	body.js #worldmap li p {
+		display: none;
+		z-index: 9;
+		font-size: 1.2em;
+		opacity: 0;
+		position: absolute;
+		min-width: 250px;
+		width: 20vw;
+		background: rgba(255,255,255,0.8);
+		border-radius: 1em;
+		padding: 1em;
+		border: 1px solid darkorange;
+		transition: opacity 1s ease;
+	}
+
+	body.js #worldmap li p.active {
+		display: inline;
+		opacity: 1;
+	}
+
+	body.js #worldmap li h2 {
+		z-index: 9;
+		width: 100%;
+		height: 100%;
+		text-indent: -10000px;
+		border-radius: 1em;
+		animation-name: animation;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+	}
+
+	body.js #worldmap li h2.active {
+		opacity: 1;
+		animation-name: none;
+		box-shadow: 0px 0px 2em darkorange;
+		border: 1px solid darkorange;
+	}
+
+	body.js #worldmap li.dragonfiles {
+		width: 18.5%;
+		height: 5%;
+		top: 88%;
+		left: 66%;
+	}
+
+	body.js #worldmap li.dragonfiles p{
+		bottom: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.lagoon {
+		width: 8%;
+		height: 5%;
+		top: 72.5%;
+		left: 6.5%;
+	}
+
+	body.js #worldmap li.lagoon p {
+		bottom: 100%;
+		left: 100%;
+	}
+
+	body.js #worldmap li.spiders {
+		width: 12%;
+		height: 5%;
+		top: 54%;
+		left: 1%;
+	}
+
+	body.js #worldmap li.spiders p {
+		bottom: 100%;
+		left: 100%;
+	}
+
+	body.js #worldmap li.ants {
+		width: 15%;
+		height: 5%;
+		top: 37.5%;
+		left: 81%;
+	}
+
+	body.js #worldmap li.ants p {
+		top: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.pineapple {
+		width: 11%;
+		height: 8%;
+		top: 12.5%;
+		left: 66%;
+	}
+
+	body.js #worldmap li.pineapple p {
+		top: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.arena {
+		width: 7%;
+		height: 5%;
+		top: 11.5%;
+		left: 53.5%;
+	}
+
+	body.js #worldmap li.arena p {
+		top: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.reed {
+		width: 11.5%;
+		height: 5%;
+		top: 1%;
+		left: 51.5%;
+	}
+
+	body.js #worldmap li.reed p {
+		top: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.frogs {
+		width: 12%;
+		height: 8%;
+		top: 0.7%;
+		left: 18.5%;
+	}
+
+	body.js #worldmap li.frogs p {
+		top: 100%;
+		left: 100%;
+	}
+
+	body.js #worldmap li.kingfisher {
+		width: 15%;
+		height: 5%;
+		top: 65.3%;
+		left: 49.5%;
+	}
+
+	body.js #worldmap li.kingfisher p {
+		bottom: 100%;
+		left: 100%;
+	}
+
+	body.js #worldmap li.longhorn {
+		width: 12.5%;
+		height: 5%;
+		top: 42%;
+		left: 49%;
+	}
+
+	body.js #worldmap li.longhorn p {
+		bottom: 100%;
+		right: 100%;
+	}
+
 }
 
-#float-list li.dragonfiles p{
-	bottom: 100%;
-	right: 100%;
-}
 
-#float-list li.lagoon {
-	width: 8%;
-	height: 5%;
-	top: 72.5%;
-	left: 6.5%;
-}
-
-#float-list li.lagoon p {
-	bottom: 100%;
-	left: 100%;
-}
-
-#float-list li.spiders {
-	width: 12%;
-	height: 5%;
-	top: 54%;
-	left: 1%;
-}
-
-#float-list li.spiders p {
-	bottom: 100%;
-	left: 100%;
-}
-
-#float-list li.ants {
-	width: 15%;
-	height: 5%;
-	top: 37.5%;
-	left: 81%;
-}
-
-#float-list li.ants p {
-	top: 100%;
-	right: 100%;
-}
-
-#float-list li.pineapple {
-	width: 11%;
-	height: 7%;
-	top: 13%;
-	left: 66%;
-}
-
-#float-list li.pineapple p {
-	top: 100%;
-	right: 100%;
-}
-
-#float-list li.arena {
-	width: 7%;
-	height: 5%;
-	top: 11.5%;
-	left: 53.5%;
-}
-
-#float-list li.arena p {
-	top: 100%;
-	right: 100%;
-}
-
-#float-list li.reed {
-	width: 11.5%;
-	height: 5%;
-	top: 1%;
-	left: 51.5%;
-}
-
-#float-list li.reed p {
-	top: 100%;
-	right: 100%;
-}
-
-#float-list li.frogs {
-	width: 12%;
-	height: 7.5%;
-	top: 1%;
-	left: 18.5%;
-}
-
-#float-list li.frogs p {
-	top: 100%;
-	left: 100%;
-}
-
-#float-list li.kingfisher {
-	width: 15%;
-	height: 5%;
-	top: 65.3%;
-	left: 49.5%;
-}
-
-#float-list li.kingfisher p {
-	bottom: 100%;
-	left: 100%;
-}
-
-#float-list li.longhorn {
-	width: 12.5%;
-	height: 5%;
-	top: 42%;
-	left: 49%;
-}
-
-#float-list li.longhorn p {
-	bottom: 100%;
-	right: 100%;
-}
 
 
 
