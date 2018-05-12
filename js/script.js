@@ -1,13 +1,9 @@
 $(document).ready(function() {
 
 	$('body').addClass('js');
-
-	$('#main-menu ul').addClass('hide');
-	$('#main-menu ul li.active').addClass('hide');
 	
-	$('#trigger-bar').addClass('enabled');
 	$('#trigger-icon').click(function(event){
-		$('#main-menu ul').toggleClass('hide');
+		$('#main-menu').toggleClass('show');
 	});
 
 	$('#worldmap ul li h2').mouseenter(function(event){
