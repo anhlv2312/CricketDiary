@@ -93,6 +93,7 @@ body {
 	text-transform: uppercase;
 	color: white;
 	text-shadow: 0px 0px 1px black;
+	user-select: none;
 }
 
 #trigger-icon {
@@ -139,6 +140,7 @@ header h1 {
 	color: white;
 	text-shadow: 0px 0px 10px black;
 	font-size: 4em;
+	user-select: none;
 }
 
 main {
@@ -488,6 +490,7 @@ main {
 	border-radius: 0 0.5em 0.5em 0;
 	background: rgba(0,0,0,0.5);
 	display: none;
+	user-select: none;
 }
 
 #slideshow.enabled ul {
