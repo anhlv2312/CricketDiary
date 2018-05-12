@@ -14,9 +14,7 @@ $(document).ready(function() {
 	$('#worldmap ul li h2').mouseleave(function(event){
 		$(this).removeClass('active');
 		$(this).parent().children("p").removeClass('active');
-
 	});
-	
 
 	$('#slideshow').addClass('enabled');
 

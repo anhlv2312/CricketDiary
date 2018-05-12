@@ -12,10 +12,6 @@ h1, h2, a {
 	font-family: "Milonga", "Georgia", serif;
 }
 
-h4, form {
-	font-family: "Helvetica", "Arial", sans-serif;
-}
-
 body {
 	font-family: "Vollkorn", "Times New Roman", serif;
 	font-size: 14px;
@@ -23,11 +19,17 @@ body {
 	background: #3e4444;
 }
 
+main {
+	background: white;
+}
+
 .hide {
 	display: none;
 }
 
 /* Top Menu Bar */
+
+
 
 header {
 	display: flex;
@@ -144,9 +146,9 @@ header h2 {
 #banner h1 {
 	background: rgba(0,0,0,0.5);
 	padding: 0.5em 0;
-	width: 100%;
 	position: absolute;
-	top: 50px;
+	width: 100%;
+	top: 1em;
 	text-align: center;
 	color: white;
 	text-shadow: 0px 0px 10px black;
@@ -154,9 +156,6 @@ header h2 {
 	user-select: none;
 }
 
-main {
-	background: white;
-}
 
 #action-menu {
 	width: 100%;
@@ -191,24 +190,24 @@ main {
 
 /* Home Page Body */
 
-#home-page main section {
+#home-page .container {
 	padding: 1em;
 }
 
-#home-page main section:last-child {
+#home-page .container:last-child {
 	padding-bottom: 0em;
 }
 
-#home-page main section h2 {
+#home-page .container h2 {
 	margin-bottom: 1em;
 }
 
-#home-page main section figure {
+#home-page .container figure {
 	text-align: center;
 	margin-bottom: 1em;
 }
 
-#home-page main section p {
+#home-page .container p {
 	padding-bottom: 1em;
 }
 
@@ -397,6 +396,10 @@ main {
 	border: 1px solid black;
 }
 
+#feedback h4, #feedback form {
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
 
 /* Content Page Body */
 
@@ -518,8 +521,6 @@ main {
 	background: rgba(0,0,0,0.8);
 }
 
-
-
 /* Map Page Body */
 
 #worldmap {
@@ -545,32 +546,16 @@ main {
 	margin-bottom: 0.3em;
 }
 
-
-@keyframes animation {
-	0%, 10% {
-		box-shadow: 0px 0px 1px darkorange;
-		opacity: 0;
-	}
-	70% {
-		box-shadow: 0px 0px 30px darkorange;
-		opacity: 1;
-	}
-	90%, 100% {
-		box-shadow: 0px 0px 50px darkorange;
-		opacity: 0;
-	}
-}
-
 /* Page Footer */
 footer {
-	color: black;
+	color: white;
 	text-align: center;
 	padding: 1em 0;
 }
 
 footer a {
 	font-family: "Vollkorn", "Times New Roman", serif;
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
@@ -587,34 +572,37 @@ footer a {
 		flex-direction: row;
 	}
 
-	#banner {
-		background: url('../images/full_cover.jpg');
-		background-size: cover;
-		background-position: center right;
+	header section{
+		display: none;
 	}
 
 	#main-menu {
-		width: auto;
 		display: block;
 	}
 
 	#main-menu ul {
 		margin-top: 0;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: center;
 	}
 
 	#trigger-icon{
 		display: none;
 	}
-
-	#summary h3 {
-		padding: 1em 15vw;
+	
+	#banner {
+		background: url('../images/full_cover.jpg');
+		background-size: cover;
+		background-position: center right;
 	}
 
 
 	#foreword, #author {
 		overflow: auto;
+	}
+
+	#summary h3 {
+		padding: 1em 15vw;
 	}
 
 	#summary figure img {
@@ -692,7 +680,16 @@ footer a {
 
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1250px) {
+
+	header section{
+		display: flex;
+	}
+
+	#main-menu ul {
+		justify-content: flex-end;
+	}
+
 	#feedback form {
 		display: flex;
 		flex-wrap: wrap;
@@ -711,9 +708,9 @@ footer a {
 }
 
 
-/* Land Coordinates - Only enable when window width greater than 750px */
+/* Land Coordinates - Only enable when window width greater than 1250px */
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 1250px) {
 
 	body.js #worldmap ul {
 		position: absolute;
@@ -738,7 +735,7 @@ footer a {
 		width: 20vw;
 		background: rgba(255,255,255,0.8);
 		border-radius: 1em;
-		padding: 1em;
+		padding: 0.5em 0.7em;
 		border: 1px solid darkorange;
 		transition: opacity 1s ease;
 	}
@@ -768,8 +765,8 @@ footer a {
 
 	body.js #worldmap li.dragonfiles {
 		width: 18.5%;
-		height: 5%;
-		top: 88%;
+		height: 7%;
+		top: 87%;
 		left: 66%;
 	}
 
@@ -780,8 +777,8 @@ footer a {
 
 	body.js #worldmap li.lagoon {
 		width: 8%;
-		height: 5%;
-		top: 72.5%;
+		height: 7%;
+		top: 72%;
 		left: 6.5%;
 	}
 
@@ -792,8 +789,8 @@ footer a {
 
 	body.js #worldmap li.spiders {
 		width: 12%;
-		height: 5%;
-		top: 54%;
+		height: 7%;
+		top: 53%;
 		left: 1%;
 	}
 
@@ -804,8 +801,8 @@ footer a {
 
 	body.js #worldmap li.ants {
 		width: 15%;
-		height: 5%;
-		top: 37.5%;
+		height: 7%;
+		top: 36.5%;
 		left: 81%;
 	}
 
@@ -816,8 +813,8 @@ footer a {
 
 	body.js #worldmap li.pineapple {
 		width: 11%;
-		height: 8%;
-		top: 12.5%;
+		height: 10%;
+		top: 11.5%;
 		left: 66%;
 	}
 
@@ -828,8 +825,8 @@ footer a {
 
 	body.js #worldmap li.arena {
 		width: 7%;
-		height: 5%;
-		top: 11.5%;
+		height: 7%;
+		top: 10.5%;
 		left: 53.5%;
 	}
 
@@ -840,8 +837,8 @@ footer a {
 
 	body.js #worldmap li.reed {
 		width: 11.5%;
-		height: 5%;
-		top: 1%;
+		height: 7%;
+		top: 0%;
 		left: 51.5%;
 	}
 
@@ -852,8 +849,8 @@ footer a {
 
 	body.js #worldmap li.frogs {
 		width: 12%;
-		height: 8%;
-		top: 0.7%;
+		height: 10%;
+		top: 0%;
 		left: 18.5%;
 	}
 
@@ -864,8 +861,8 @@ footer a {
 
 	body.js #worldmap li.kingfisher {
 		width: 15%;
-		height: 5%;
-		top: 65.3%;
+		height: 7%;
+		top: 64.3%;
 		left: 49.5%;
 	}
 
@@ -876,8 +873,8 @@ footer a {
 
 	body.js #worldmap li.longhorn {
 		width: 12.5%;
-		height: 5%;
-		top: 42%;
+		height: 7%;
+		top: 41%;
 		left: 49%;
 	}
 
@@ -888,6 +885,21 @@ footer a {
 
 }
 
+
+@keyframes animation {
+/*	0%, 10% {
+		box-shadow: 0px 0px 1px darkorange;
+		opacity: 0;
+	}*/
+	0%, 100% {
+		box-shadow: 0px 0px 30px darkorange;
+		opacity: 1;
+	}
+/*	90%, 100% {
+		box-shadow: 0px 0px 50px darkorange;
+		opacity: 0;
+	}*/
+}
 
 
 
