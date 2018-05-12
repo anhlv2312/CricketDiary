@@ -8,12 +8,12 @@ $(document).ready(function() {
 
 	$('#worldmap ul li h2').mouseenter(function(event){
 		$(this).addClass('active');
-		$(this).parent().children("p").addClass('active');
+		$(this).parent().children("p").show();
 	});
 
 	$('#worldmap ul li h2').mouseleave(function(event){
 		$(this).removeClass('active');
-		$(this).parent().children("p").removeClass('active');
+		$(this).parent().children("p").hide();
 	});
 
 	$('#slideshow').addClass('enabled');
