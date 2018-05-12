@@ -174,18 +174,20 @@ header h2 {
 	white-space: nowrap;
 	font-size: 1.3em;
 	border-radius: 0.5em;
-	color: black;
-	background: white;
-	border: 1px solid black;
+
 	padding: 0.5em 1em;
 	box-shadow: 0px 0px 5px black;
 	transition: all 0.5s ease;
-}
 
-#action-menu a:hover {
 	color: #e6e2d3;
 	background: #405d27;
 	border: 1px solid #e6e2d3;
+}
+
+#action-menu a:hover {
+	color: black;
+	background: white;
+	border: 1px solid black;
 }
 
 /* Home Page Body */
@@ -548,14 +550,15 @@ header h2 {
 
 /* Page Footer */
 footer {
-	color: white;
+	color: darkgray;
 	text-align: center;
 	padding: 1em 0;
+	text-shadow: 0px 0px 1px black;
 }
 
 footer a {
-	font-family: "Vollkorn", "Times New Roman", serif;
-	color: white;
+	font-family: inherit; 
+	color: darkgray;
 	text-decoration: none;
 }
 
