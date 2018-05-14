@@ -39,7 +39,7 @@ main {
 header {
 	display: flex;
 	flex-direction: column;
-	position: sticky;
+	position: fixed;
 	padding: 1em;
 	top: 0;
 	z-index: 99;
