@@ -21,6 +21,7 @@ body {
 	font-size: 14px;
 	text-align: justify;
 	background: #3e4444;
+	color: black;
 }
 
 main {
@@ -177,6 +178,7 @@ header h2 {
 	min-width: 240px;
 	white-space: nowrap;
 	font-size: 1.3em;
+	font-weight: bold;
 	border-radius: 0.5em;
 
 	padding: 0.5em 1em;
@@ -375,7 +377,6 @@ header h2 {
 }
 
 #feedback button {
-	width: 10em;
 	display: inline-block;
 	font-weight: bold;
 	font-size: 1em;
@@ -397,73 +398,78 @@ header h2 {
 
 /* Content Page Body */
 
-#content-page main {
+#chapter-list {
 	padding: 1em;
 }
 
-#content-page main ul {
+#chapter-list ul {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: space-evenly
 }
 
-#content-page main li {
-	border-radius: 5%;
-	background: white;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	margin: 1em 0;
-	position: relative;
-}
-
-#content-page figure {
-	width: 90%;
-	border-radius: 5%;
+#chapter-list li {
+	width: 90vw;
+	height: 90vw;
+	background-size: cover;
+	background-position: center center;
 	border: 1px solid #3e4444;
+	border-radius: 5%;
+	margin: 1em 0;
+	padding: 1.5em 0;
 	position: relative;
-	overflow: hidden;
 }
 
-#content-page figure img {
-	display: block;
-	opacity: 0.5;
+#chapter-list li h2 {
+	position: absolute;
 	width: 100%;
-	border-radius: 5%;
-	box-shadow: 0px 0px 10px #3e4444;
+	padding: 0.5em 0;
+	font-size: 1.5em;
+	background: rgba(255,255,255,0.5);
+	text-align: center;
+	text-shadow: 0px 0px 1px white;
+	transition: opacity 0.5s ease;
+}
+#chapter-list li p {
+	position: absolute;
+	bottom: 1.5em;
+	font-size: 1.2em;
+	text-shadow: 0px 0px 1px white;
+	padding: 0.5em 1em;
+	background: rgba(255,255,255,0.5);
 	transition: opacity 0.5s ease;
 }
 
-#content-page figure h2 {
-	width: 100%;
+#chapter-list li a {
+	background: rgba(255,255,255,0.5);
+	border-radius: 5%;
+	font-size: 2em;
 	position: absolute;
-	padding: 0.5em 0;
-	color: white;
-	top: 0.8em;
-	font-size: 1.5em;
-	background: rgba(0,0,0,0.5);
-	text-align: center;
-	text-shadow: 0px 0px 5px black;
-}
-#content-page figure p {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	transition: opacity 0.5s ease;
 	color: black;
-	font-size: 1.2em;
-	width: 100%;
-	position: absolute;
-	opacity: 1;
-	bottom: 1em;
-	padding: 0 1em;
-	transition: bottom 0.5s ease, opacity 0.5s ease;
-	text-shadow: 0px 0px 1px white;
+	text-transform: capitalize;
+	text-shadow: 0px 0px 5px white;
 }
 
-#content-page li:hover img{
+#chapter-list li:hover a {
 	opacity: 1;
 }
 
-#content-page li:hover figure p {
-	bottom: -100%;
+#chapter-list li:hover p {
+	opacity: 0;
+}
+
+#chapter-list li:hover h2 {
 	opacity: 0;
 }
 
@@ -641,15 +647,16 @@ footer a {
 	}
 
 
-	#content-page main {
+	#chapter-list {
 		background: url('../images/index.jpg');
 		background-size: cover;
 		background-position: bottom left;
 		background-attachment: fixed;
 	}
 
-	#content-page figure {
+	#chapter-list li {
 		width: 320px;
+		height: 320px;
 	}
 
 	#slideshow ul {
