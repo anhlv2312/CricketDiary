@@ -179,10 +179,9 @@ header h2 {
 	min-width: 240px;
 	white-space: nowrap;
 	font-size: 1.3em;
-	font-weight: bold;
 	border-radius: 0.5em;
 
-	padding: 0.5em 1em;
+	padding: 0.5em 1em 0.3em 1em;
 	box-shadow: 0px 0px 5px black;
 	transition: all 0.5s ease;
 
@@ -379,8 +378,8 @@ header h2 {
 
 #feedback button {
 	display: inline-block;
-	font-weight: bold;
 	font-size: 1em;
+	font-weight: bold;
 	border-radius: 0.5em;
 	color: #e6e2d3;
 	background: #405d27;
@@ -684,7 +683,7 @@ footer a {
 
 }
 
-/* Land Coordinates - Only enable when window width greater than 1250px */
+/* Land Coordinates - Only enable when window width greater than 750px */
 
 @media only screen and (min-width: 750px) {
 
@@ -703,20 +702,24 @@ footer a {
 
 
 	body.js #worldmap li p {
-		display: none;
+		visibility: hidden;
+		opacity: 0;
 		z-index: 9;
 		font-size: 1em;
 		position: absolute;
 		min-width: 250px;
 		width: 20vw;
-		background: rgba(255,255,255,0.8);
+		background: rgba(255,255,255,0.6);
 		border-radius: 1em;
 		padding: 0.5em 0.7em;
 		border: 1px solid darkorange;
+		transition: opacity 1s ease;
+		text-shadow: 0px 0px 1px white;
 	}
 
 	body.js #worldmap li h2 {
 		z-index: 9;
+		opacity: 0;
 		width: 100%;
 		height: 100%;
 		text-indent: -10000px;
@@ -727,7 +730,8 @@ footer a {
 	}
 
 	body.js #worldmap li.active p {
-		display: block;
+		opacity: 1;
+		visibility: visible;
 	}
 
 	body.js #worldmap li.active h2 {
@@ -908,7 +912,7 @@ footer a {
 	}
 }
 
-#chapter-page main h3 {
+#chapter-page main h2 {
 	padding: 0.5em;
 	font-size: 2em;
 	text-align: left;
@@ -941,7 +945,7 @@ footer a {
 	font-style: italic;
 }
 
-#part-menu  {
+#part-menu {
 	display: none;
 	font-size: 1.2em;
 	border: 1px solid b;
@@ -949,3 +953,32 @@ footer a {
 	display: flex;
 	justify-content: space-between;
 }
+
+
+#part-menu a {
+	display: inline-block;
+	font-size: 1em;
+	border-radius: 0.5em;
+	color: #e6e2d3;
+	background: #405d27;
+	border: 1px solid #3e4444;
+	padding: 0.5em 1em 0.4em 1em;
+	transition: all 0.5s ease;
+	text-decoration: none;
+}
+#part-menu a:hover {
+	color: black;
+	background: white;
+	border: 1px solid black;
+}
+
+#part-menu .prev:before {
+	content: '\276E';
+	margin-right: 0.5em;
+}
+
+#part-menu .next:after {
+	content: '\276F';
+	margin-left: 0.5em;
+}
+

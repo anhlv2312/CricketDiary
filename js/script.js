@@ -6,13 +6,13 @@ $(document).ready(function() {
 		$('#main-menu').toggleClass('show');
 	});
 
-	$('#worldmap ul li').mouseover(function(event){
-		$(this).addClass('active');
+	$('#worldmap ul li h2').mouseenter(function(event){
+		$(this).parent().addClass('active');
 
 	});
 
-	$('#worldmap ul li').mouseout(function(event){
-		$(this).removeClass('active');
+	$('#worldmap ul li h2').mouseleave(function(event){
+		$(this).parent().removeClass('active');
 	});
 
 	$('#slideshow').addClass('enabled');
@@ -40,7 +40,7 @@ $(document).ready(function() {
 			$('#next-parts article:first-child').prependTo($('#current'));
 			$(document).scrollTop(0);
 		} else {
-			alert('This is the last page')
+			alert('This is the last part')
 		}
 		event.preventDefault();
 	});
@@ -51,7 +51,7 @@ $(document).ready(function() {
 			$('#prev-parts article:last-child').prependTo($('#current'));
 			$(document).scrollTop(0);
 		} else {
-			alert('This is the first page')
+			alert('This is the first part')
 		}
 		event.preventDefault();
 	});
