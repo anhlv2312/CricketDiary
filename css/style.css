@@ -9,20 +9,21 @@ li {
 }
 
 h1, h2, #main-menu {
-	font-family: "Milonga", "Georgia", serif;
+	font-family: "Milonga", "Georgia", "Times New Roman",  serif;
 }
 
 form {
-	font-family: "Helvetica", "Arial", sans-serif;
+	font-family: "Signika", "Helvetica", "Arial", sans-serif;
 }
 
 body {
-	font-family: "Vollkorn", "Times New Roman", serif;
+	font-family: "Vollkorn", "Georgia", "Times New Roman", serif;
 	font-size: 14px;
 	text-align: justify;
 	background: #3e4444;
 	color: black;
 }
+
 
 main {
 	margin-top: 4em;
@@ -151,7 +152,7 @@ header h2 {
 
 #banner h1 {
 	background: rgba(0,0,0,0.5);
-	padding: 0.5em 0;
+	padding: 0.5em;
 	position: absolute;
 	width: 100%;
 	top: 1em;
@@ -166,7 +167,7 @@ header h2 {
 #action-menu {
 	width: 100%;
 	position: absolute;
-	bottom: 80px;
+	bottom: 3em;
 	text-align: center;
 }
 
@@ -174,14 +175,14 @@ header h2 {
 	display: inline-block;
 	text-decoration: none;
 	text-transform: capitalize;
-	margin: 0.5em;
+	margin: 0.5em 1em;
 	width: 30%;
-	min-width: 240px;
+	min-width: 300px;
 	white-space: nowrap;
-	font-size: 1.3em;
+	font-size: 2em;
 	border-radius: 0.5em;
 
-	padding: 0.5em 1em 0.3em 1em;
+	padding: 0.5em 1em 0.4em 1em;
 	box-shadow: 0px 0px 5px black;
 	transition: all 0.5s ease;
 
@@ -316,6 +317,7 @@ header h2 {
 	border: 0;
 	border-radius: 0.8em;
 	margin: 2em 0 0 0;
+	height: 14.5em;
 }
 
 #feedback fieldset:last-of-type {
@@ -323,6 +325,7 @@ header h2 {
 	margin-bottom: 0.5em;
 	background: none;
 	text-align: center;
+	height: auto;
 }
 
 #feedback legend {
@@ -354,6 +357,7 @@ header h2 {
 	outline: none;
 	border: 1px solid #c1946a;
 	padding: 0.3em 0.5em;
+	font-family: inherit;
 }
 
 #feedback select {
@@ -362,6 +366,7 @@ header h2 {
 	padding: 0.3em 0.5em;
 	height: 2em;
 	font-size: 1em;
+	font-family: inherit;
 }
 
 
@@ -373,21 +378,25 @@ header h2 {
 	border: 1px solid #c1946a;
 	resize: none;
 	width: 100%;
-	height: 140px;
+	height: 75%;
+	font-family: inherit;
 }
 
 #feedback button {
 	display: inline-block;
 	font-size: 1em;
 	font-weight: bold;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
 	border-radius: 0.5em;
 	color: #e6e2d3;
 	background: #405d27;
 	border: 1px solid #e6e2d3;
-	padding: 1em 1.5em;
+	padding: 1em 2em;
 	transition: all 0.5s ease;
 	cursor: pointer;
 	outline: none;
+	font-family: inherit;
 }
 
 #feedback button:hover {
@@ -429,7 +438,7 @@ header h2 {
 #chapter-list li h2 {
 	width: 100%;
 	padding: 0.5em 0;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	background: rgba(255,255,255,0.5);
 	text-align: center;
 	text-shadow: 0px 0px 1px white;
@@ -646,7 +655,6 @@ footer a {
 		margin-left: 15vw;
 		margin-right: 15vw;
 	}
-
 
 	#chapter-list {
 		background: url('../images/index.jpg');
@@ -883,11 +891,13 @@ footer a {
 	}
 
 	#feedback fieldset {
+		margin-top: 0.5em;
 		width: 30vw;
 		margin-left: 1em;
 		margin-right: 1em;
 	}
 	#feedback fieldset:last-of-type {
+		margin-top: 2em;
 		width: 100vw;
 	}
 
