@@ -1,5 +1,0 @@
-Intro animation
-- logo in the front page, then scale down and move to default position
-
-
-Map animation
