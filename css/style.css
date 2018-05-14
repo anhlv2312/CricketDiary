@@ -8,8 +8,12 @@ li {
 	list-style: none;
 }
 
-h1, h2, a {
+h1, h2, #main-menu {
 	font-family: "Milonga", "Georgia", serif;
+}
+
+form {
+	font-family: "Helvetica", "Arial", sans-serif;
 }
 
 body {
@@ -269,7 +273,7 @@ header h2 {
 }
 
 #feedback article h4 {
-	font-size: 1em;
+	font-size: 1.2em;
 	color: #82b74b;
 }
 
@@ -379,7 +383,7 @@ header h2 {
 	color: #e6e2d3;
 	background: #405d27;
 	border: 1px solid #e6e2d3;
-	padding: 0.5em 1em;
+	padding: 1em 1.5em;
 	transition: all 0.5s ease;
 	cursor: pointer;
 	outline: none;
@@ -390,11 +394,6 @@ header h2 {
 	background: white;
 	border: 1px solid black;
 }
-
-#feedback h4, #feedback form {
-	font-family: "Helvetica", "Arial", sans-serif;
-}
-
 
 /* Content Page Body */
 
@@ -424,11 +423,12 @@ header h2 {
 	border-radius: 5%;
 	border: 1px solid #3e4444;
 	position: relative;
+	overflow: hidden;
 }
 
 #content-page figure img {
 	display: block;
-	opacity: 1;
+	opacity: 0.5;
 	width: 100%;
 	border-radius: 5%;
 	box-shadow: 0px 0px 10px #3e4444;
@@ -451,14 +451,20 @@ header h2 {
 	font-size: 1.2em;
 	width: 100%;
 	position: absolute;
+	opacity: 1;
 	bottom: 1em;
 	padding: 0 1em;
+	transition: bottom 0.5s ease, opacity 0.5s ease;
 	text-shadow: 0px 0px 1px white;
-	transition: opacity 0.5s ease;
 }
 
 #content-page li:hover img{
-	opacity: 0.3;
+	opacity: 1;
+}
+
+#content-page li:hover figure p {
+	bottom: -100%;
+	opacity: 0;
 }
 
 /* Gallery Page Body */
@@ -707,6 +713,7 @@ footer a {
 	}
 
 	body.js #worldmap li { 
+		padding: 0;
 		position: absolute;
 		cursor: pointer;
 	}
@@ -725,11 +732,6 @@ footer a {
 		border: 1px solid darkorange;
 	}
 
-
-	body.js #worldmap li p.active {
-		display: block;
-	}
-
 	body.js #worldmap li h2 {
 		z-index: 9;
 		width: 100%;
@@ -741,101 +743,21 @@ footer a {
 		animation-iteration-count: infinite;
 	}
 
-	body.js #worldmap li h2.active {
+	body.js #worldmap li.active p {
+		display: block;
+	}
+
+	body.js #worldmap li.active h2 {
 		opacity: 1;
 		animation-name: none;
 		box-shadow: 0px 0px 2em darkorange;
 		border: 1px solid darkorange;
 	}
 
-	body.js #worldmap li.dragonfiles {
-		width: 18.5%;
-		height: 7%;
-		top: 87%;
-		left: 66%;
-	}
-
-	body.js #worldmap li.dragonfiles p{
-		bottom: 100%;
-		right: 100%;
-	}
-
-	body.js #worldmap li.lagoon {
-		width: 8%;
-		height: 7%;
-		top: 71.7%;
-		left: 6.5%;
-	}
-
-	body.js #worldmap li.lagoon p {
-		bottom: 100%;
-		left: 100%;
-	}
-
-	body.js #worldmap li.spiders {
-		width: 12%;
-		height: 7%;
-		top: 53%;
-		left: 1%;
-	}
-
-	body.js #worldmap li.spiders p {
-		bottom: 100%;
-		left: 100%;
-	}
-
-	body.js #worldmap li.ants {
-		width: 15%;
-		height: 7%;
-		top: 36.5%;
-		left: 81%;
-	}
-
-	body.js #worldmap li.ants p {
-		top: 100%;
-		right: 100%;
-	}
-
-	body.js #worldmap li.pineapple {
-		width: 11%;
-		height: 10%;
-		top: 11.5%;
-		left: 66%;
-	}
-
-	body.js #worldmap li.pineapple p {
-		top: 100%;
-		right: 100%;
-	}
-
-	body.js #worldmap li.arena {
-		width: 7%;
-		height: 7%;
-		top: 10.5%;
-		left: 53.5%;
-	}
-
-	body.js #worldmap li.arena p {
-		top: 100%;
-		right: 100%;
-	}
-
-	body.js #worldmap li.reed {
-		width: 11.5%;
-		height: 7%;
-		top: 0%;
-		left: 51.5%;
-	}
-
-	body.js #worldmap li.reed p {
-		top: 100%;
-		right: 100%;
-	}
-
 	body.js #worldmap li.frogs {
 		width: 12%;
-		height: 10%;
-		top: 0%;
+		height: 7.5%;
+		top: 1%;
 		left: 18.5%;
 	}
 
@@ -844,11 +766,97 @@ footer a {
 		left: 100%;
 	}
 
-	body.js #worldmap li.kingfisher {
+	body.js #worldmap li.reed {
+		width: 11.5%;
+		height: 4.5%;
+		top: 1.2%;
+		left: 51.5%;
+	}
+
+	body.js #worldmap li.reed p {
+		top: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.arena {
+		width: 7%;
+		height: 4.5%;
+		top: 11.8%;
+		left: 53.5%;
+	}
+
+	body.js #worldmap li.arena p {
+		top: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.pineapple {
+		width: 10%;
+		height: 7.5%;
+		top: 12.7%;
+		left: 66.5%;
+	}
+
+	body.js #worldmap li.pineapple p {
+		top: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.ants {
 		width: 15%;
-		height: 7%;
-		top: 64.3%;
-		left: 49.5%;
+		height: 4.5%;
+		top: 37.7%;
+		left: 81%;
+	}
+
+	body.js #worldmap li.ants p {
+		top: 100%;
+		right: 100%;
+	}
+
+
+	body.js #worldmap li.spiders {
+		width: 12%;
+		height: 4.5%;
+		top: 54.3%;
+		left: 1%;
+	}
+
+	body.js #worldmap li.spiders p {
+		bottom: 100%;
+		left: 100%;
+	}
+
+	body.js #worldmap li.lagoon {
+		width: 8%;
+		height: 4.5%;
+		top: 73%;
+		left: 6.5%;
+	}
+
+	body.js #worldmap li.lagoon p {
+		bottom: 100%;
+		left: 100%;
+	}
+
+
+	body.js #worldmap li.longhorn {
+		width: 12.5%;
+		height: 4.5%;
+		top: 42.2%;
+		left: 49%;
+	}
+
+	body.js #worldmap li.longhorn p {
+		bottom: 100%;
+		right: 100%;
+	}
+
+	body.js #worldmap li.kingfisher {
+		width: 15.5%;
+		height: 4.5%;
+		top: 65.5%;
+		left: 49%;
 	}
 
 	body.js #worldmap li.kingfisher p {
@@ -856,14 +864,14 @@ footer a {
 		left: 100%;
 	}
 
-	body.js #worldmap li.longhorn {
-		width: 12.5%;
-		height: 7%;
-		top: 41%;
-		left: 49%;
+	body.js #worldmap li.dragonfiles {
+		width: 18.5%;
+		height: 4.5%;
+		top: 88.5%;
+		left: 66%;
 	}
 
-	body.js #worldmap li.longhorn p {
+	body.js #worldmap li.dragonfiles p{
 		bottom: 100%;
 		right: 100%;
 	}

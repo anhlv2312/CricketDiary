@@ -6,14 +6,13 @@ $(document).ready(function() {
 		$('#main-menu').toggleClass('show');
 	});
 
-	$('#worldmap ul li h2').mouseenter(function(event){
+	$('#worldmap ul li').mouseover(function(event){
 		$(this).addClass('active');
-		$(this).parent().children("p").addClass('active');
+
 	});
 
-	$('#worldmap ul li h2').mouseleave(function(event){
+	$('#worldmap ul li').mouseout(function(event){
 		$(this).removeClass('active');
-		$(this).parent().children("p").removeClass('active');
 	});
 
 	$('#slideshow').addClass('enabled');
