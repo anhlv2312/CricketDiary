@@ -30,10 +30,17 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
+
+	$('#chapter-page #next-parts').hide();
+	$('#chapter-page #part-menu').show();
+
 	$('#chapter-page .next').click(function(event){
 		if ($('#next-parts article').length > 0) {
 			$('#current article').appendTo($('#prev-parts'));
 			$('#next-parts article:first-child').prependTo($('#current'));
+			$(document).scrollTop(0);
+		} else {
+			alert('This is the last page')
 		}
 		event.preventDefault();
 	});
@@ -42,6 +49,9 @@ $(document).ready(function() {
 		if ($('#prev-parts article').length > 0) {
 			$('#current article').appendTo($('#next-parts'));
 			$('#prev-parts article:last-child').prependTo($('#current'));
+			$(document).scrollTop(0);
+		} else {
+			alert('This is the first page')
 		}
 		event.preventDefault();
 	});

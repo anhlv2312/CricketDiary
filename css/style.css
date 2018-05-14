@@ -913,7 +913,7 @@ footer a {
 	text-align: left;
 }
 
-#prev-parts, #next-parts {
+#prev-parts {
 	display: none;
 }
 
@@ -940,7 +940,8 @@ footer a {
 	font-style: italic;
 }
 
-#chapter-page #current nav  {
+#part-menu  {
+	display: none;
 	font-size: 1.2em;
 	border: 1px solid b;
 	padding-bottom: 1em;
