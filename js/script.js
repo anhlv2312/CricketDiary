@@ -30,4 +30,20 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
+	$('#chapter-page .next').click(function(event){
+		if ($('#next-parts article').length > 0) {
+			$('#current article').appendTo($('#prev-parts'));
+			$('#next-parts article:first-child').prependTo($('#current'));
+		}
+		event.preventDefault();
+	});
+
+	$('#chapter-page .prev').click(function(event){
+		if ($('#prev-parts article').length > 0) {
+			$('#current article').appendTo($('#next-parts'));
+			$('#prev-parts article:last-child').prependTo($('#current'));
+		}
+		event.preventDefault();
+	});
+
 });

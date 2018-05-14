@@ -907,6 +907,43 @@ footer a {
 	}
 }
 
+#chapter-page main h3 {
+	padding: 0.5em;
+	font-size: 2em;
+	text-align: left;
+}
 
+#prev-parts, #next-parts {
+	display: none;
+}
 
+#chapter-page .parts {
+	padding: 0 1em;
+}
 
+#chapter-page .parts h4 {
+	font-size: 1.5em;
+}
+
+#chapter-page .parts p {
+	font-size: 1.2em;
+	margin-top: 0.5em;
+}
+
+#chapter-page .parts p:last-child {
+	padding-bottom: 1em;
+}
+
+#chapter-page .parts blockquote {
+	margin: 0.5em 2em;
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+#chapter-page #current nav  {
+	font-size: 1.2em;
+	border: 1px solid b;
+	padding-bottom: 1em;
+	display: flex;
+	justify-content: space-between;
+}
