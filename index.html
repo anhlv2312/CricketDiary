@@ -63,7 +63,7 @@
 			<p>Translator: <em>Đặng Thế Bính</em></p>
 		</section>
 
-		<section id="feedback" class="container">
+		<section id="testimonial" class="container">
 			<h2>Testimonials</h2>
 			<article>
 				<h4>Aliquam Libero, Queensland</h4>
@@ -73,48 +73,49 @@
 				<h4>Curabitur Faucibus, New South Wales</h4>
 				<blockquote>Cras ante est, tempus non dictum quis, faucibus ac enim. Vivamus facilisis, arcu vehicula fringilla laoreet, lacus arcu tristique est, vel pellentesque velit orci quis turpis.</blockquote>
 			</article>
+		</section>
+
+		<section id="feedback" class="container">
 			<h2>Leave your feedback</h2>
-			<div id="feedback-popup">
-				<form>
-					<fieldset>
-						<legend>Your details</legend>
-						<div class="form-item">
-							<label>Name:</label>
-							<input type="text" placeholder="First and last name">
+			<form id="feedback-form">
+				<fieldset>
+					<legend>Your details</legend>
+					<div class="form-item">
+						<label>Full Name:</label>
+						<input type="text" name="fullname" id="input-fullname" placeholder="First and last name">
+					</div>
+					<div class="form-item">
+						<label>State:</label>
+						<div class="form-element">
+							<select name="State" id="form-state">
+								<option value="Australian Capital Territory">ACT</option>
+								<option value="New South Wales">NSW</option>
+								<option value="Northern Territory">NT</option>
+								<option value="Queensland" selected>QLD</option>
+								<option value="South Australia">SA</option>
+								<option value="Tasmania">TAS</option>
+								<option value="Victoria">VIC</option>
+								<option value="Western Australia">WA</option>
+							</select>
 						</div>
-						<div class="form-item">
-							<label>State:</label>
-							<div class="form-element">
-								<select>
-									<option>ACT</option>
-									<option>NSW</option>
-									<option>NT</option>
-									<option selected>QLD</option>
-									<option>SA</option>
-									<option>TAS</option>
-									<option>VIC</option>
-									<option>WA</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-item">
-							<label>Postcode:</label>
-							<input type="text" placeholder="4 number postcode">
-						</div>
-						<div class="form-item">
-							<label>Email:</label>
-							<input type="text" placeholder="Must be a valid email">
-						</div>
-					</fieldset>
-					<fieldset>
-						<legend>Your comment</legend>
-						<textarea></textarea>
-					</fieldset>
-					<fieldset>
-						<button id="submit" type="submit">Send Feedback</button>
-					</fieldset>
-				</form>
-			</div>
+					</div>
+					<div class="form-item">
+						<label>Post Code:</label>
+						<input type="text" name="postcode" id="form-postcode" placeholder="4 number postcode">
+					</div>
+					<div class="form-item">
+						<label>Email:</label>
+						<input type="text" name="email" id="form-email" placeholder="Must be a valid email">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Your comment</legend>
+					<textarea name="comment" id="form-comment"></textarea>
+				</fieldset>
+				<fieldset>
+					<button id="submit" type="submit">Send Feedback</button>
+				</fieldset>
+			</form>
 		</section>
 	</main>
 
