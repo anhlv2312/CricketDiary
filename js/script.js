@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	// Add class js to body if JavaScript is enabled
 	$('body').addClass('js');
-	
+
 	// show menu icon for mobile devices
 	$('#menu-icon').click(function(event){
 		$('#main-menu').toggleClass('show');
@@ -26,12 +26,6 @@ $(document).ready(function() {
 	$('#slideshow a.prev').click(function(event){
 		$('#slideshow ul li:last-child').prependTo($('#slideshow ul'));
 	});
-
-	$('button#submit').click(function(event){
-		alert("Sorry, this function hasn't been implemented!");
-		event.preventDefault();
-	});
-
 
 	$('#chapter-page #next-parts').hide();
 	$('#chapter-page #part-menu').show();
@@ -58,14 +52,59 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
-
 	// Feeback Form 
 	$('#feedback form').submit(function(event){
+		var complete = true;
+		var fullname = $('#form-fullname').val();
+		var postcode = $('#form-postcode').val();
+		var state = $('#form-state').val();
+		var email = $('#form-email').val();
+		var comment = $('#form-comment').val();
 
-	})
+		if (fullname == '') {
+			$('#form-fullname').addClass('error');
+			$('#form-fullname').parent().find('label').addClass('error');
+			complete = false;
+		}
+
+		if (postcode.length !=4 || isNaN(postcode)) {
+			$('#form-postcode').addClass('error');
+			$('#form-postcode').parent().find('label').addClass('error');
+			complete = false;
+		}
+
+		if (!validateEmail(email)) {
+			$('#form-email').addClass('error');
+			$('#form-email').parent().find('label').addClass('error');
+			complete = false;
+		}
+
+		if (comment == '') {
+			$('#form-comment').addClass('error');
+			complete = false;
+		}
+
+		if (complete) {
+			$('#testimonial').append('<article></article>');
+			$('#testimonial article:last-of-type').append('<h4>' + fullname + ', ' + state + '</h4>');
+			$('#testimonial article:last-of-type').append('<blockquote>' + comment + '</blockquote>');
+			$('#feedback').hide();
+		} 
+
+		event.preventDefault();
+	});
+
+	$('#form-fullname, #form-postcode, #form-email, #form-comment').keydown(function(event){
+		$(this).removeClass('error');
+		$(this).parent().find('label').removeClass('error');
+	});
 
 });
 
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 
 
 

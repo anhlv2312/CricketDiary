@@ -281,10 +281,11 @@ header h2 {
 #testimonial article h4 {
 	font-size: 1.2em;
 	color: #82b74b;
+	margin: 0 0.2em;
 }
 
 #testimonial blockquote {
-	padding: 0.5em 1em;
+	padding: 0.5em 2em;
 	font-size: 1.2em;
 	font-style: italic;
 }
@@ -349,7 +350,7 @@ header h2 {
 	margin: 0.6em;
 }
 
-#feedback input[type=text] {
+#feedback input {
 	width: 60%;
 	font-size: 1em;
 	border-radius: 0.3em;
@@ -367,7 +368,6 @@ header h2 {
 	font-size: 1em;
 	font-family: inherit;
 }
-
 
 #feedback textarea {
 	font-size: 1em;
@@ -402,6 +402,14 @@ header h2 {
 	color: black;
 	background: white;
 	border: 1px solid black;
+}
+
+#feedback input.error, #feedback textarea.error {
+	border: 1px solid red;
+}
+
+#feedback label.error {
+	color: red;
 }
 
 /* Content Page Body */
