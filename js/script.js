@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
+	// Add class js to body if JavaScript is enabled
 	$('body').addClass('js');
 	
-	$('#trigger-icon').click(function(event){
+	// show menu icon for mobile devices
+	$('#menu-icon').click(function(event){
 		$('#main-menu').toggleClass('show');
 	});
 
@@ -56,4 +58,23 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
+
+	// Feeback Form 
+	$('#feedback form').submit(function(event){
+
+	})
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+

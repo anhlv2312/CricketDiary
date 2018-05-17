@@ -65,26 +65,26 @@ header h2 {
 	user-select: none;
 }
 
-#trigger-icon {
+#menu-icon {
 	padding: 0.5em;
 	display: inline;
 	cursor: pointer;
 }
 
-#trigger-icon span.line {
+#menu-icon span.line {
 	display: block;
 	background: white;
 	height: 3px;
 	width: 25px;
 }
 
-#trigger-icon span {
+#menu-icon span {
 	display: block;
 	height: 3px;
 	width: 25px;
 }
 
-#trigger-icon:hover span.line {
+#menu-icon:hover span.line {
 	background: #82b74b;
 }
 
@@ -603,7 +603,7 @@ footer a {
 		justify-content: center;
 	}
 
-	#trigger-icon{
+	#menu-icon{
 		display: none;
 	}
 	
