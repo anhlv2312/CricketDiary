@@ -935,10 +935,6 @@ footer a {
 	text-align: left;
 }
 
-#prev-parts {
-	display: none;
-}
-
 #chapter-page .parts {
 	padding: 0 1em;
 }
@@ -962,19 +958,17 @@ footer a {
 	font-style: italic;
 }
 
-#part-menu {
+#prev-parts {
 	display: none;
-	font-size: 1.2em;
-	border: 1px solid b;
-	padding-bottom: 1em;
-	display: flex;
-	justify-content: space-between;
 }
 
+#current-part {
+	overflow: auto;
+}
 
-#part-menu a {
-	display: inline-block;
-	font-size: 1em;
+#current-part a {
+	font-size: 1.2em;
+	margin-bottom: 1em;
 	border-radius: 0.5em;
 	color: #e6e2d3;
 	background: #405d27;
@@ -982,20 +976,32 @@ footer a {
 	padding: 0.5em 1em 0.4em 1em;
 	transition: all 0.5s ease;
 	text-decoration: none;
+	display: none;
 }
-#part-menu a:hover {
+
+#current-part a:hover {
 	color: black;
 	background: white;
 	border: 1px solid black;
 }
 
-#part-menu .prev:before {
-	content: '\276E';
-	margin-right: 0.5em;
+#current-part .prev {
+	float: left;
+	display: none;
 }
 
-#part-menu .next:after {
+#current-part .next {
+	float: right;
+	display: block;
+}
+
+#current-part .next:after {
 	content: '\276F';
 	margin-left: 0.5em;
+}
+
+#current-part .prev:before {
+	content: '\276E';
+	margin-right: 0.5em;
 }
 

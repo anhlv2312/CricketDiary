@@ -30,26 +30,30 @@ $(document).ready(function() {
 
 	// Script for Chapter Page
 	$('#chapter-page #next-parts').hide();
-	$('#chapter-page #part-menu').show();
 
 	$('#chapter-page .next').click(function(event){
+		console.log($('#next-parts article'))
 		if ($('#next-parts article').length > 0) {
-			$('#current article').appendTo($('#prev-parts'));
-			$('#next-parts article:first-child').prependTo($('#current'));
+			$('#current-part article').appendTo($('#prev-parts'));
+			$('#next-parts article:first-child').prependTo($('#current-part'));
+			$('#current-part a').show()
 			$(document).scrollTop(0);
-		} else {
-			alert('This is the last part')
+		}
+		if ($('#next-parts article').length === 0) {
+			$(this).hide();
 		}
 		event.preventDefault();
 	});
 
 	$('#chapter-page .prev').click(function(event){
 		if ($('#prev-parts article').length > 0) {
-			$('#current article').appendTo($('#next-parts'));
-			$('#prev-parts article:last-child').prependTo($('#current'));
+			$('#current-part article').prependTo($('#next-parts'));
+			$('#prev-parts article:last-child').prependTo($('#current-part'));
+			$('#current-part .next').show()
 			$(document).scrollTop(0);
-		} else {
-			alert('This is the first part')
+		} 
+		if ($('#prev-parts article').length === 0) {
+			$(this).hide();
 		}
 		event.preventDefault();
 	});
