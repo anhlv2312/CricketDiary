@@ -8,8 +8,12 @@ li {
 	list-style: none;
 }
 
-h1, h2, #main-menu {
+h1, h2, h3, #main-menu {
 	font-family: "Milonga", "Georgia", "Times New Roman",  serif;
+}
+
+a {
+	color: #405d27;
 }
 
 form {
@@ -18,7 +22,7 @@ form {
 
 body {
 	font-family: "Vollkorn", "Georgia", "Times New Roman", serif;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: justify;
 	background: #3e4444;
 	color: black;
@@ -157,10 +161,9 @@ header h2 {
 	text-align: center;
 	color: white;
 	text-shadow: 0px 0px 10px black;
-	font-size: 4em;
+	font-size: 3.5em;
 	user-select: none;
 }
-
 
 #action-menu {
 	width: 100%;
@@ -177,7 +180,7 @@ header h2 {
 	width: 30%;
 	min-width: 300px;
 	white-space: nowrap;
-	font-size: 2em;
+	font-size: 1.5em;
 	border-radius: 0.5em;
 
 	padding: 0.5em 1em 0.4em 1em;
@@ -198,15 +201,16 @@ header h2 {
 /* Home Page Body */
 
 #home-page .container {
-	padding: 1em;
+	padding: 1.5em;
 }
 
 #home-page .container:last-child {
 	padding-bottom: 0em;
 }
 
-#home-page .container h2 {
+#home-page .container h3 {
 	margin-bottom: 1em;
+	font-size: 1.7em;
 }
 
 #home-page .container figure {
@@ -225,12 +229,12 @@ header h2 {
 	background: #e6e2d3;
 }
 
-#summary h3 {
-	padding: 1.5em;
+#summary h5 {
+	padding: 1em 0;
 	font-size: 1.5em;
 }
 
-#summary h3:first-letter {
+#summary h5:first-letter {
 	float: left;
 	font-size: 3em;
 	margin-top: 0.25em;
@@ -239,7 +243,6 @@ header h2 {
 }
 
 #foreword {
-	font-size: 1.4em;
 	background: url('../images/about_square.jpg');
 	background-size: cover;
 	background-position: bottom right;
@@ -247,13 +250,12 @@ header h2 {
 
 #foreword p {
 	text-shadow: 0px 0px 1px white ;
+	font-size: 1.2em;
 }
 
 
 #author {
-	font-size: 1.2em;
-	color: #e6e2d3;
-	background: #405d27;
+	background: #e6e2d3;
 }
 
 #author figure img {
@@ -261,6 +263,10 @@ header h2 {
 	border: 1px solid gray;
 	border-radius: 50%;
 	box-shadow: 0px 0px 10px black;
+}
+
+#author p {
+	font-size: 1.2em;
 }
 
 #testimonial {
@@ -442,7 +448,7 @@ header h2 {
 	font-size: 1.5em;
 }
 
-#chapter-list li h2 {
+#chapter-list li h3 {
 	width: 100%;
 	padding: 0.5em 0;
 	font-size: 1.2em;
@@ -485,7 +491,7 @@ header h2 {
 	opacity: 0;
 }
 
-#chapter-list li:hover h2 {
+#chapter-list li:hover h3 {
 	opacity: 0;
 }
 
@@ -558,16 +564,17 @@ header h2 {
 
 #worldmap ul {
 	width: 100%;
-	padding: 0 1em;
+	padding: 1em 1em;
 }
 
 #worldmap ul li {
 	width: 100%;
-	padding: 1em 0;
+	padding: 0.5em 0;
 }
 
-#worldmap ul li h2 {
-	margin-bottom: 0.3em;
+#worldmap ul li h3 {
+	font-size: 1.5em;
+	margin-bottom: 0.4em;
 }
 
 /* Page Footer */
@@ -587,10 +594,6 @@ footer a {
 /* For widescreen browser */
 
 @media only screen and (min-width: 750px) {
-
-	body {
-		font-size: 16px;
-	}
 
 	header {
 		padding: 0.5em 1em;
@@ -622,45 +625,27 @@ footer a {
 	}
 
 
+	#banner h1 {
+		text-shadow: 0px 0px 10px black;
+		font-size: 4em;
+	}
 	#foreword, #author {
 		overflow: auto;
-	}
-
-	#summary h3 {
-		padding: 1em 15vw;
-	}
-
-	#foreword p {
-		margin: 0 15vw;
 	}
 
 	#author figure img{
 		width: 300px;
 		float: left;
-		margin: 0 1em 1em 15vw;
+		margin: 0 2em 1em 0;
 		border: 1px solid gray;
 		border-radius: 5%;
 		box-shadow: 0px 0px 10px black;
 	}
 
-	#author p {
-		margin: 0 15vw 0 15vw;
-	}
-
-	#testimonial article {
-		margin-left: 15vw;
-		margin-right: 15vw;
-	} 
-
 	#testimonial blockquote {
 		padding-left: 4em;
 		font-size: 1.2em;
 		font-style: italic;
-	}
-
-	#feedback fieldset {
-		margin-left: 15vw;
-		margin-right: 15vw;
 	}
 
 	#chapter-list {
@@ -732,7 +717,7 @@ footer a {
 		text-shadow: 0px 0px 1px white;
 	}
 
-	body.js #worldmap li h2 {
+	body.js #worldmap li h3 {
 		z-index: 9;
 		opacity: 0;
 		width: 100%;
@@ -749,7 +734,7 @@ footer a {
 		visibility: visible;
 	}
 
-	body.js #worldmap li.active h2 {
+	body.js #worldmap li.active h3 {
 		opacity: 1;
 		animation-name: none;
 		box-shadow: 0px 0px 2em darkorange;
@@ -891,10 +876,18 @@ footer a {
 		justify-content: flex-end;
 	}
 
+	#action-menu a {
+		font-size: 2em;
+	}
+
 	#feedback form {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+
+	#home-page .container {
+		padding: 1.5em 15vw;
 	}
 
 	#feedback fieldset {
@@ -929,18 +922,18 @@ footer a {
 	}
 }
 
-#chapter-page main h2 {
-	padding: 0.5em;
-	font-size: 2em;
+#chapter-page main {
+	padding: 1.5em;
+}
+
+#chapter-page main h3 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
 	text-align: left;
 }
 
-#chapter-page .parts {
-	padding: 0 1em;
-}
-
 #chapter-page .parts h4 {
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 #chapter-page .parts p {
@@ -968,7 +961,6 @@ footer a {
 
 #current-part a {
 	font-size: 1.2em;
-	margin-bottom: 1em;
 	border-radius: 0.5em;
 	color: #e6e2d3;
 	background: #405d27;

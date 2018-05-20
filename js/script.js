@@ -9,11 +9,11 @@ $(document).ready(function() {
 	});
 
 	// Script for Map Page
-	$('#worldmap ul li h2').mouseenter(function(event){
+	$('#worldmap ul li h3').mouseenter(function(event){
 		$(this).parent().addClass('active');
 	});
 
-	$('#worldmap ul li h2').mouseleave(function(event){
+	$('#worldmap ul li h3').mouseleave(function(event){
 		$(this).parent().removeClass('active');
 	});
 
