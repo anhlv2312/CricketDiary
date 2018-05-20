@@ -265,7 +265,7 @@ header h2 {
 	box-shadow: 0px 0px 10px black;
 }
 
-#author p {
+#author p, #author li {
 	font-size: 1.2em;
 }
 
