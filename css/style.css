@@ -38,6 +38,10 @@ main {
 	display: none;
 }
 
+.transparent {
+	opacity: 0;
+}
+
 /* Top Menu Bar */
 
 header {
@@ -932,6 +936,7 @@ footer a {
 	text-align: left;
 }
 
+
 #chapter-page .parts h4 {
 	font-size: 1.2em;
 }
@@ -939,6 +944,11 @@ footer a {
 #chapter-page .parts p {
 	font-size: 1.2em;
 	margin-top: 0.5em;
+}
+
+#chapter-page .parts span {
+	cursor: pointer;
+	border-bottom: 1px dotted #3e4444;;
 }
 
 #chapter-page .parts p:last-child {
@@ -957,6 +967,7 @@ footer a {
 
 #current-part {
 	overflow: auto;
+	transition: opacity 1s ease;
 }
 
 #current-part a {
@@ -996,4 +1007,17 @@ footer a {
 	content: '\276E';
 	margin-right: 0.5em;
 }
+
+#definition {
+	display: none;
+	position: absolute;
+	color: #3e4444;
+	background: #e6e2d3;
+	border: solid 1px #3e4444;
+	border-radius: 0.2em;
+	padding: 0.4em 0.6em 0.3em 0.6em;
+	width: 250px;
+	text-align: left;
+}
+
 

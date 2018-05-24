@@ -3,6 +3,7 @@ $(document).ready(function() {
 	// Add class js to body if JavaScript is enabled
 	$('body').addClass('js');
 
+
 	// Toogle the menu when menu icon is clicked (mobile devices only)
 	$('#menu-icon').click(function(event){
 		$('#main-menu').toggleClass('show');
@@ -34,10 +35,12 @@ $(document).ready(function() {
 	$('#chapter-page .next').click(function(event){
 		console.log($('#next-parts article'))
 		if ($('#next-parts article').length > 0) {
+			$('#current-part').addClass('transparent');
 			$('#current-part article').appendTo($('#prev-parts'));
 			$('#next-parts article:first-child').prependTo($('#current-part'));
 			$('#current-part a').show()
-			$(document).scrollTop(0);
+			$('html, body').animate({scrollTop:0}, 800)
+			$('#current-part').removeClass('transparent');
 		}
 		if ($('#next-parts article').length === 0) {
 			$(this).hide();
@@ -47,15 +50,34 @@ $(document).ready(function() {
 
 	$('#chapter-page .prev').click(function(event){
 		if ($('#prev-parts article').length > 0) {
+			$('#current-part').addClass('transparent');
 			$('#current-part article').prependTo($('#next-parts'));
 			$('#prev-parts article:last-child').prependTo($('#current-part'));
 			$('#current-part .next').show()
-			$(document).scrollTop(0);
+			$('html, body').animate({scrollTop:0}, 800)
+			$('#current-part').removeClass('transparent');
 		} 
 		if ($('#prev-parts article').length === 0) {
 			$(this).hide();
 		}
 		event.preventDefault();
+	});
+
+	$('#chapter-page span').mouseover(function(event){
+		var offset = $(this).offset();
+  		event.stopPropagation();
+		$('#definition').show();
+		$('#definition').html($(this).attr('alt'));
+		$('#definition').css({
+			left: offset.left,
+			top: offset.top + 25
+		});
+	});
+
+	$('#chapter-page span').mouseout(function(event){
+  		event.stopPropagation();
+		$('#definition').hide();
+		$('#definition').html("");
 	});
 
 	// Script for Feeback Form 
