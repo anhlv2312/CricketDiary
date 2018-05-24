@@ -65,9 +65,8 @@ $(document).ready(function() {
 
 	$('#chapter-page span').mouseover(function(event){
 		var offset = $(this).offset();
-  		event.stopPropagation();
-		$('#definition').show();
 		$('#definition').html($(this).attr('alt'));
+		$('#definition').show();
 		$('#definition').css({
 			left: offset.left,
 			top: offset.top + 25
@@ -77,7 +76,6 @@ $(document).ready(function() {
 	$('#chapter-page span').mouseout(function(event){
   		event.stopPropagation();
 		$('#definition').hide();
-		$('#definition').html("");
 	});
 
 	// Script for Feeback Form 

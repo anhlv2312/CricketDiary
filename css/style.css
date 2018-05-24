@@ -948,7 +948,11 @@ footer a {
 
 #chapter-page .parts span {
 	cursor: pointer;
-	border-bottom: 1px dotted #3e4444;;
+	border-bottom: 1px dotted #3e4444;
+}
+
+#chapter-page .parts span:hover {
+	color: #82b74b;
 }
 
 #chapter-page .parts p:last-child {
