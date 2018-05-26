@@ -946,12 +946,13 @@ footer a {
 	margin-top: 0.5em;
 }
 
-#chapter-page .parts span {
+#chapter-page .parts mark {
 	cursor: pointer;
+	background: none;
 	border-bottom: 1px dotted #3e4444;
 }
 
-#chapter-page .parts span:hover {
+#chapter-page .parts mark:hover {
 	color: #82b74b;
 }
 

@@ -63,9 +63,9 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
-	$('#chapter-page span').mouseover(function(event){
+	$('#chapter-page mark').mouseover(function(event){
 		var offset = $(this).offset();
-		$('#definition').html($(this).attr('alt'));
+		$('#definition').html($(this).attr('title'));
 		$('#definition').show();
 		$('#definition').css({
 			left: offset.left,
@@ -73,7 +73,7 @@ $(document).ready(function() {
 		});
 	});
 
-	$('#chapter-page span').mouseout(function(event){
+	$('#chapter-page mark').mouseout(function(event){
   		event.stopPropagation();
 		$('#definition').hide();
 	});
