@@ -1,3 +1,4 @@
+/* Global Propertise */
 * {
 	margin: 0;
 	padding: 0;
@@ -42,7 +43,7 @@ main {
 	opacity: 0;
 }
 
-/* Top Menu Bar */
+/* Top Menu Bar & Menu Trigger Icon */
 
 header {
 	display: flex;
@@ -145,7 +146,7 @@ header h2 {
 	color: black;
 }
 
-/* Header and Title */
+/* Banner and Story Title */
 
 #banner {
 	position: relative;
@@ -581,7 +582,109 @@ header h2 {
 	margin-bottom: 0.4em;
 }
 
+/* Chapter Page Body */
+
+#chapter-page main {
+	padding: 1.5em;
+}
+
+#chapter-page main h3 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	text-align: left;
+}
+
+
+#chapter-page .parts h4 {
+	font-size: 1.2em;
+}
+
+#chapter-page .parts p {
+	font-size: 1.2em;
+	margin-top: 0.5em;
+}
+
+#chapter-page .parts mark {
+	cursor: pointer;
+	background: none;
+	border-bottom: 1px dotted #3e4444;
+}
+
+#chapter-page .parts mark:hover {
+	color: #82b74b;
+}
+
+#chapter-page .parts p:last-child {
+	padding-bottom: 1em;
+}
+
+#chapter-page .parts blockquote {
+	margin: 0.5em 2em;
+	font-size: 1.2em;
+	font-style: italic;
+}
+
+#prev-parts {
+	display: none;
+}
+
+#current-part {
+	overflow: auto;
+	transition: opacity 1s ease;
+}
+
+#current-part a {
+	font-size: 1.2em;
+	border-radius: 0.5em;
+	color: #e6e2d3;
+	background: #405d27;
+	border: 1px solid #3e4444;
+	padding: 0.5em 1em 0.4em 1em;
+	transition: all 0.5s ease;
+	text-decoration: none;
+	display: none;
+}
+
+#current-part a:hover {
+	color: black;
+	background: white;
+	border: 1px solid black;
+}
+
+#current-part .prev {
+	float: left;
+	display: none;
+}
+
+#current-part .next {
+	float: right;
+	display: block;
+}
+
+#current-part .next:after {
+	content: '\276F';
+	margin-left: 0.5em;
+}
+
+#current-part .prev:before {
+	content: '\276E';
+	margin-right: 0.5em;
+}
+
+#definition {
+	display: none;
+	position: absolute;
+	color: #3e4444;
+	background: #e6e2d3;
+	border: solid 1px #3e4444;
+	border-radius: 0.2em;
+	padding: 0.4em 0.6em 0.3em 0.6em;
+	width: 250px;
+	text-align: left;
+}
+
 /* Page Footer */
+
 footer {
 	color: darkgray;
 	text-align: center;
@@ -869,6 +972,7 @@ footer a {
 
 }
 
+/* For screen bigger than 1250px */
 
 @media only screen and (min-width: 1250px) {
 
@@ -926,103 +1030,5 @@ footer a {
 	}
 }
 
-#chapter-page main {
-	padding: 1.5em;
-}
-
-#chapter-page main h3 {
-	font-size: 1.5em;
-	margin-bottom: 0.5em;
-	text-align: left;
-}
-
-
-#chapter-page .parts h4 {
-	font-size: 1.2em;
-}
-
-#chapter-page .parts p {
-	font-size: 1.2em;
-	margin-top: 0.5em;
-}
-
-#chapter-page .parts mark {
-	cursor: pointer;
-	background: none;
-	border-bottom: 1px dotted #3e4444;
-}
-
-#chapter-page .parts mark:hover {
-	color: #82b74b;
-}
-
-#chapter-page .parts p:last-child {
-	padding-bottom: 1em;
-}
-
-#chapter-page .parts blockquote {
-	margin: 0.5em 2em;
-	font-size: 1.2em;
-	font-style: italic;
-}
-
-#prev-parts {
-	display: none;
-}
-
-#current-part {
-	overflow: auto;
-	transition: opacity 1s ease;
-}
-
-#current-part a {
-	font-size: 1.2em;
-	border-radius: 0.5em;
-	color: #e6e2d3;
-	background: #405d27;
-	border: 1px solid #3e4444;
-	padding: 0.5em 1em 0.4em 1em;
-	transition: all 0.5s ease;
-	text-decoration: none;
-	display: none;
-}
-
-#current-part a:hover {
-	color: black;
-	background: white;
-	border: 1px solid black;
-}
-
-#current-part .prev {
-	float: left;
-	display: none;
-}
-
-#current-part .next {
-	float: right;
-	display: block;
-}
-
-#current-part .next:after {
-	content: '\276F';
-	margin-left: 0.5em;
-}
-
-#current-part .prev:before {
-	content: '\276E';
-	margin-right: 0.5em;
-}
-
-#definition {
-	display: none;
-	position: absolute;
-	color: #3e4444;
-	background: #e6e2d3;
-	border: solid 1px #3e4444;
-	border-radius: 0.2em;
-	padding: 0.4em 0.6em 0.3em 0.6em;
-	width: 250px;
-	text-align: left;
-}
 
 
