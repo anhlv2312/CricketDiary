@@ -35,14 +35,14 @@ $(document).ready(function() {
 	console.log(number_of_chapter);
 	$('#chapter-content article').hide();
 
-	$('#chapter-content article:nth-child('+current_chapter+')').show();
+	$('#chapter-content article:nth-of-type('+current_chapter+')').show();
 
 	$('#chapter-content .next').click(function(event){
 		console.log($('#next-parts article'))
 		if (current_chapter < number_of_chapter) {
-			$('#chapter-content article:nth-child('+current_chapter+')').hide();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').hide();
 			current_chapter++;
-			$('#chapter-content article:nth-child('+current_chapter+')').show();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').show();
 			$('html, body').animate({scrollTop:0}, 800)
 			$('#chapter-content .prev').show();
 			if (current_chapter == number_of_chapter) {$(this).hide();}
@@ -52,9 +52,9 @@ $(document).ready(function() {
 
 	$('#chapter-content .prev').click(function(event){
 		if (current_chapter > 1) {
-			$('#chapter-content article:nth-child(' + current_chapter + ')').hide();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').hide();
 			current_chapter--;
-			$('#chapter-content article:nth-child(' + current_chapter + ')').show();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').show();
 			$('html, body').animate({scrollTop:0}, 800)
 			$('#chapter-content .prev').show();
 			if (current_chapter == 1) {$(this).hide();}
