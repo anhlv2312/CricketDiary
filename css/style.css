@@ -40,6 +40,7 @@ main {
 }
 
 .transparent {
+	display: none;
 	opacity: 0;
 }
 
@@ -584,41 +585,41 @@ header h2 {
 
 /* Chapter Page Body */
 
-#chapter-page main {
+#chapter-content {
 	padding: 1.5em;
 }
 
-#chapter-page main h3 {
+#chapter-content h3 {
 	font-size: 1.5em;
 	margin-bottom: 0.5em;
 	text-align: left;
 }
 
 
-#chapter-page .parts h4 {
+#chapter-content h4 {
 	font-size: 1.2em;
 }
 
-#chapter-page .parts p {
+#chapter-content p {
 	font-size: 1.2em;
 	margin-top: 0.5em;
 }
 
-#chapter-page .parts mark {
+#chapter-content mark {
 	cursor: pointer;
 	background: none;
 	border-bottom: 1px dotted #3e4444;
 }
 
-#chapter-page .parts mark:hover {
+#chapter-content mark:hover {
 	color: #82b74b;
 }
 
-#chapter-page .parts p:last-child {
+#chapter-content p:last-child {
 	padding-bottom: 1em;
 }
 
-#chapter-page .parts blockquote {
+#chapter-content blockquote {
 	margin: 0.5em 2em;
 	font-size: 1.2em;
 	font-style: italic;
