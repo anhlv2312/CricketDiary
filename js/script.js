@@ -3,7 +3,6 @@ $(document).ready(function() {
 	// Add class js to body if JavaScript is enabled
 	$('body').addClass('js');
 
-
 	// Toogle the menu when menu icon is clicked (mobile devices only)
 	$('#menu-icon').click(function(event){
 		$('#main-menu').toggleClass('show');
@@ -29,37 +28,37 @@ $(document).ready(function() {
 		$('#slideshow ul li:last-child').prependTo($('#slideshow ul'));
 	});
 
-	// Script for Chapter Page
-	$('#chapter-page #next-parts').hide();
+	var current_chapter = 1;
+	var number_of_chapter = $('#chapter-content article').length;
+	$('#chapter-content .next').show();
 
-	$('#chapter-page .next').click(function(event){
+	console.log(number_of_chapter);
+	$('#chapter-content article').hide();
+
+	$('#chapter-content article:nth-child('+current_chapter+')').show();
+
+	$('#chapter-content .next').click(function(event){
 		console.log($('#next-parts article'))
-		if ($('#next-parts article').length > 0) {
-			$('#current-part').addClass('transparent');
-			$('#current-part article').appendTo($('#prev-parts'));
-			$('#next-parts article:first-child').prependTo($('#current-part'));
-			$('#current-part a').show()
+		if (current_chapter < number_of_chapter) {
+			$('#chapter-content article:nth-child('+current_chapter+')').hide();
+			current_chapter++;
+			$('#chapter-content article:nth-child('+current_chapter+')').show();
 			$('html, body').animate({scrollTop:0}, 800)
-			$('#current-part').removeClass('transparent');
-		}
-		if ($('#next-parts article').length === 0) {
-			$(this).hide();
-		}
+			$('#chapter-content .prev').show();
+			if (current_chapter == number_of_chapter) {$(this).hide();}
+		} 
 		event.preventDefault();
 	});
 
-	$('#chapter-page .prev').click(function(event){
-		if ($('#prev-parts article').length > 0) {
-			$('#current-part').addClass('transparent');
-			$('#current-part article').prependTo($('#next-parts'));
-			$('#prev-parts article:last-child').prependTo($('#current-part'));
-			$('#current-part .next').show()
+	$('#chapter-content .prev').click(function(event){
+		if (current_chapter > 1) {
+			$('#chapter-content article:nth-child(' + current_chapter + ')').hide();
+			current_chapter--;
+			$('#chapter-content article:nth-child(' + current_chapter + ')').show();
 			$('html, body').animate({scrollTop:0}, 800)
-			$('#current-part').removeClass('transparent');
+			$('#chapter-content .prev').show();
+			if (current_chapter == 1) {$(this).hide();}
 		} 
-		if ($('#prev-parts article').length === 0) {
-			$(this).hide();
-		}
 		event.preventDefault();
 	});
 

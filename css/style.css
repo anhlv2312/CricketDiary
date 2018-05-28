@@ -624,16 +624,12 @@ header h2 {
 	font-style: italic;
 }
 
-#prev-parts {
-	display: none;
-}
-
-#current-part {
+#chapter-content {
 	overflow: auto;
 	transition: opacity 1s ease;
 }
 
-#current-part a {
+#chapter-content a {
 	font-size: 1.2em;
 	border-radius: 0.5em;
 	color: #e6e2d3;
@@ -645,28 +641,26 @@ header h2 {
 	display: none;
 }
 
-#current-part a:hover {
+#cchapter-content a:hover {
 	color: black;
 	background: white;
 	border: 1px solid black;
 }
 
-#current-part .prev {
+#chapter-content .prev {
 	float: left;
-	display: none;
 }
 
-#current-part .next {
+#chapter-content .next {
 	float: right;
-	display: block;
 }
 
-#current-part .next:after {
+#chapter-content .next:after {
 	content: '\276F';
 	margin-left: 0.5em;
 }
 
-#current-part .prev:before {
+#chapter-content .prev:before {
 	content: '\276E';
 	margin-right: 0.5em;
 }
