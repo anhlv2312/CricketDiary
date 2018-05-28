@@ -40,6 +40,7 @@ main {
 }
 
 .transparent {
+	display: none;
 	opacity: 0;
 }
 
@@ -588,12 +589,20 @@ header h2 {
 	padding: 1.5em;
 }
 
+<<<<<<< HEAD
 #chapter-content  h3 {
+=======
+#chapter-content h3 {
+>>>>>>> test
 	font-size: 1.5em;
 	margin-bottom: 0.5em;
 	text-align: left;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> test
 #chapter-content h4 {
 	font-size: 1.2em;
 }
