@@ -598,11 +598,6 @@ header h2 {
 	font-size: 1.2em;
 }
 
-#chapter-content article {
-	transition: opacity 1s ease;
-}
-
-
 #chapter-content p {
 	font-size: 1.2em;
 	margin-top: 0.5em;
@@ -630,7 +625,6 @@ header h2 {
 
 #chapter-content {
 	overflow: auto;
-	transition: opacity 1s ease;
 }
 
 #chapter-content a {

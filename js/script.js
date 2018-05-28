@@ -19,7 +19,6 @@ $(document).ready(function() {
 
 	// Script for Gallery Page
 	$('#slideshow').addClass('enabled');
-
 	$('#slideshow a.next').click(function(event){
 		$('#slideshow ul li:first-child').appendTo($('#slideshow ul'));
 	});
@@ -31,17 +30,16 @@ $(document).ready(function() {
 	var current_chapter = 1;
 	var number_of_chapter = $('#chapter-content article').length;
 	$('#chapter-content .next').show();
+	$('#chapter-content article').hide().addClass('transparent');;
+	$('#chapter-content article:first-of-type').show().removeClass('transparent');
 
-	$('#chapter-content article').hide();
-
-	$('#chapter-content article:first-of-type').show();
-
-	$('#chapter-content .next').click(function(event){
+	$('#chapter-content .next').click(function(event){;
+	$('#chapter-content article:first-of-type')
 		console.log($('#next-parts article'))
 		if (current_chapter < number_of_chapter) {
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').hide();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:0}).hide();
 			current_chapter++;
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').show();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:1}).show();
 			$('html, body').animate({scrollTop:0}, 800)
 			$('#chapter-content .prev').show();
 			if (current_chapter == number_of_chapter) {$(this).hide();}
@@ -51,9 +49,9 @@ $(document).ready(function() {
 
 	$('#chapter-content .prev').click(function(event){
 		if (current_chapter > 1) {
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').hide();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:0}).hide();
 			current_chapter--;
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').show();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:1}).show();
 			$('html, body').animate({scrollTop:0}, 800)
 			$('#chapter-content .next').show();
 			if (current_chapter == 1) {$(this).hide();}
