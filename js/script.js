@@ -60,18 +60,30 @@ $(document).ready(function() {
 	});
 
 	$('#chapter-page mark').mouseover(function(event){
+
 		var offset = $(this).offset();
+
 		$('#definition').html($(this).attr('title'));
+		$(this).attr('title', "");
 		$('#definition').show();
-		$('#definition').css({
-			left: offset.left,
-			top: offset.top + 25
-		});
+		if (offset.left + 250 >= $(document).width()) {
+			$('#definition').css({
+				left: $(document).width() - 275,
+				top: offset.top + 25
+			});
+		} else {
+			$('#definition').css({
+				left: offset.left,
+				top: offset.top + 25
+			});					
+		}
 	});
 
 	$('#chapter-page mark').mouseout(function(event){
   		event.stopPropagation();
 		$('#definition').hide();
+		$(this).attr('title', $('#definition').html());
+		$('#definition').html("");
 	});
 
 	// Script for Feeback Form 
@@ -133,14 +145,6 @@ function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-
-
-
-
-
-
-
-
 
 
 
