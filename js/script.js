@@ -2,10 +2,11 @@ $(document).ready(function() {
 
 	// Add class js to body if JavaScript is enabled
 	$('body').addClass('js');
+	$('body.js #main-menu').toggleClass('hide');
 
 	// Toogle the menu when menu icon is clicked (mobile devices only)
 	$('#menu-icon').click(function(event){
-		$('#main-menu').toggleClass('show');
+		$('body.js #main-menu').toggleClass('hide');
 	});
 
 	// Script for Map Page
@@ -23,7 +24,7 @@ $(document).ready(function() {
 		$('#slideshow ul li:first-child').appendTo($('#slideshow ul'));
 	});
 	
-	$('#slideshow a.prev').click(function(event){
+	$('#slideshow a.prev').click(function(event){            
 		$('#slideshow ul li:last-child').prependTo($('#slideshow ul'));
 	});
 

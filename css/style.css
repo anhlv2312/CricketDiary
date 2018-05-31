@@ -31,8 +31,11 @@ body {
 
 
 main {
-	margin-top: 4em;
 	background: white;
+}
+
+body.js main {
+	margin-top: 4em;
 }
 
 .hide {
@@ -48,12 +51,15 @@ main {
 header {
 	display: flex;
 	flex-direction: column;
-	position: fixed;
 	padding: 1em;
-	top: 0;
 	width: 100%;
-	z-index: 99;
 	background: #3e4444;
+}
+
+body.js header {
+	position: fixed;
+	top: 0;
+	z-index: 99;
 }
 
 header section {
@@ -77,6 +83,9 @@ header h2 {
 #menu-icon {
 	padding: 0.5em;
 	display: inline;
+}
+
+body.js #menu-icon {
 	cursor: pointer;
 }
 
@@ -93,13 +102,16 @@ header h2 {
 	width: 25px;
 }
 
-#menu-icon:hover span.line {
+body.js #menu-icon:hover span.line {
 	background: #82b74b;
 }
 
 #main-menu {
-	display: none;
 	width: 100%;
+}
+
+body.js #main-menu.hide {
+	display: none;
 }
 
 #main-menu ul {
@@ -113,10 +125,6 @@ header h2 {
 
 #main-menu li {
 	min-width: 11em;
-}
-
-#main-menu.show {
-	display: flex;
 }
 
 #main-menu a {
@@ -704,6 +712,10 @@ footer a {
 	}
 
 	#main-menu {
+		display: block;
+	}
+
+	body.js #main-menu.hide {
 		display: block;
 	}
 
