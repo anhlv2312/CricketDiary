@@ -31,32 +31,31 @@ $(document).ready(function() {
 	var current_chapter = 1;
 	var number_of_chapter = $('#chapter-content article').length;
 	$('#chapter-content .next').show();
-	$('#chapter-content article').hide().addClass('transparent');;
-	$('#chapter-content article:first-of-type').show().removeClass('transparent');
+	$('#chapter-content article').hide();
+	$('#chapter-content article:first-of-type').show();
 
 	$('#chapter-content .next').click(function(event){;
 	$('#chapter-content article:first-of-type')
-		console.log($('#next-parts article'))
 		if (current_chapter < number_of_chapter) {
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:0}).hide();
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').fadeOut(500).hide().next().fadeIn(500);
 			current_chapter++;
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:1}).show();
 			$('html, body').animate({scrollTop:0}, 800)
 			$('#chapter-content .prev').show();
 			if (current_chapter == number_of_chapter) {$(this).hide();}
+			console.log(current_chapter);
 		} 
 		event.preventDefault();
 	});
 
 	$('#chapter-content .prev').click(function(event){
 		if (current_chapter > 1) {
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:0}).hide();
+			console.log(current_chapter);
+			$('#chapter-content article:nth-of-type(' + current_chapter + ')').fadeOut(500).hide().prev().fadeIn(500);
 			current_chapter--;
-			$('#chapter-content article:nth-of-type(' + current_chapter + ')').animate({opacity:1}).show();
 			$('html, body').animate({scrollTop:0}, 800)
 			$('#chapter-content .next').show();
 			if (current_chapter == 1) {$(this).hide();}
-		} 
+		}
 		event.preventDefault();
 	});
 
@@ -111,7 +110,7 @@ $(document).ready(function() {
 
 		// Check if email input is valid
 		if (!validateEmail(email)) {
-			$('#form-email').addClass('error');
+			$('#form-email').addClass('error')
 			$('#form-email').parent().find('label').addClass('error');
 			complete = false;
 		}

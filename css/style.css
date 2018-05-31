@@ -42,10 +42,6 @@ body.js main {
 	display: none;
 }
 
-.transparent {
-	opacity: 0;
-}
-
 /* Top Menu Bar & Menu Trigger Icon */
 
 header {
@@ -520,9 +516,7 @@ body.js #main-menu.hide {
 	overflow: hidden;
 }
 
-
 #slideshow li {
-	transition: all 1s ease;
 	border-right: 1px solid #3e4444;;
 }
 
