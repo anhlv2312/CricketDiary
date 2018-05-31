@@ -18,15 +18,26 @@ $(document).ready(function() {
 		$(this).parent().removeClass('active');
 	});
 
-	// Script for Gallery Page
 	$('#slideshow').addClass('enabled');
-	$('#slideshow a.next').click(function(event){
-		$('#slideshow ul li:first-child').appendTo($('#slideshow ul'));
+
+
+	// Script for Gallery Page
+
+	$('#slideshow a.next').click(function(event){            
+		$('#slideshow ul').animate({marginLeft: -$('#slideshow ul li:first-child').width()}, 500, function(){
+			$('#slideshow ul li:first-child').appendTo($('#slideshow ul'));
+			$('#slideshow ul').css({marginLeft: 0});
+		});
+
 	});
 	
-	$('#slideshow a.prev').click(function(event){            
+	$('#slideshow a.prev').click(function(event){
+		$('#slideshow ul').css({marginLeft: -$('#slideshow ul li:last-child').width()});
 		$('#slideshow ul li:last-child').prependTo($('#slideshow ul'));
+		$('#slideshow ul').animate({marginLeft: 0}, 500);
 	});
+
+	// Script for Chapter Page
 
 	var current_chapter = 1;
 	var number_of_chapter = $('#chapter-content article').length;
