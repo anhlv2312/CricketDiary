@@ -588,45 +588,49 @@ body.js #main-menu.hide {
 
 #chapter-content {
 	padding: 1.5em;
+	overflow: auto;
 }
 
 #chapter-content h3 {
 	font-size: 1.5em;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 	text-align: left;
 }
 
-#chapter-content h4 {
+#chapter-content article img {
+	float: left;
+	width: 100%;
+	margin-bottom: 1em;
+	border: 1px solid #3e4444;
+}
+
+#chapter-content article h4 {
 	font-size: 1.2em;
 }
 
-#chapter-content p {
+#chapter-content article p {
 	font-size: 1.2em;
 	margin-top: 0.5em;
 }
 
-#chapter-content mark {
+#chapter-content article mark {
 	cursor: pointer;
 	background: none;
 	border-bottom: 1px dotted #3e4444;
 }
 
-#chapter-content mark:hover {
+#chapter-content article mark:hover {
 	color: #82b74b;
 }
 
-#chapter-content p:last-child {
+#chapter-content article p:last-child {
 	padding-bottom: 1em;
 }
 
-#chapter-content blockquote {
+#chapter-content article blockquote {
 	margin: 0.5em 2em;
 	font-size: 1.2em;
 	font-style: italic;
-}
-
-#chapter-content {
-	overflow: auto;
 }
 
 #chapter-content a {
@@ -784,6 +788,14 @@ footer a {
 	#slideshow img {
 		height: 85vh;
 		width: auto;
+	}
+
+	#chapter-content article img {
+		height: 70vh;
+		width: auto;
+		min-width: 200px;
+		margin-bottom: 0.5em;
+		margin-right: 1.5em;
 	}
 
 }
