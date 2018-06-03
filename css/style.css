@@ -252,9 +252,16 @@ body.js #main-menu.hide {
 }
 
 #foreword {
-	background: url('../images/about_square.jpg');
+	background: url('../images/about_background.jpg');
 	background-size: cover;
 	background-position: bottom right;
+}
+
+#foreword figure img {
+	width: 70%;
+	border: 1px solid gray;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px black;
 }
 
 #foreword p {
@@ -742,6 +749,15 @@ footer a {
 		overflow: auto;
 	}
 
+	#foreword figure img{
+		width: 300px;
+		float: right;
+		margin: 0 0 1em 2em;
+		border: 1px solid gray;
+		border-radius: 5%;
+		box-shadow: 0px 0px 10px black;
+	}
+
 	#author figure img{
 		width: 300px;
 		float: left;
@@ -1005,7 +1021,7 @@ footer a {
 	}
 
 	#home-page .container {
-		padding: 1.5em 15vw;
+		padding: 1.5em 12vw;
 	}
 
 	#feedback fieldset {
