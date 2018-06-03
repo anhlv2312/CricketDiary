@@ -330,7 +330,7 @@ body.js #main-menu.hide {
 }
 
 #feedback form {
-	padding: 0em 1em 1em 1em;
+	padding: 0em 0em 1em 0em;
 }
 
 #feedback fieldset {
